@@ -18,6 +18,7 @@ namespace WindowsFormsApp1
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new frmDesigner());          
             //Test Comment
+            // com by umair
              
         }
 
