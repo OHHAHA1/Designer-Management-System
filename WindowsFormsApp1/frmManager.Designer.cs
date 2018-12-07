@@ -71,6 +71,7 @@
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.button7 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -452,6 +453,15 @@
             this.label4.TabIndex = 17;
             this.label4.Text = "Send Message";
             // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(1264, 273);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(75, 27);
+            this.button7.TabIndex = 12;
+            this.button7.Text = "Notify";
+            this.button7.UseVisualStyleBackColor = true;
+            // 
             // frmManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -463,6 +473,7 @@
             this.Controls.Add(this.button10);
             this.Controls.Add(this.richTextBox2);
             this.Controls.Add(this.button8);
+            this.Controls.Add(this.button7);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.button6);
@@ -539,5 +550,6 @@
         private System.Windows.Forms.RichTextBox richTextBox2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button button7;
     }
 }
