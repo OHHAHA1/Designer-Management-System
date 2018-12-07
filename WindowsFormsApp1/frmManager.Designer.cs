@@ -30,24 +30,24 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.customerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.orderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.invoiceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.orderToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.findToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.orderToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.costomerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.desinerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.orderToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.invoiceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.lblLogName = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -55,18 +55,17 @@
             this.CustomerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.product = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Designer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.CustID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CustName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RecentOrder = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Designer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
@@ -74,8 +73,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
-            this.flowLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.flowLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
@@ -102,14 +101,6 @@
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
             // 
-            // editToolStripMenuItem
-            // 
-            this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.orderToolStripMenuItem2});
-            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
-            this.editToolStripMenuItem.Text = "Edit";
-            // 
             // newToolStripMenuItem
             // 
             this.newToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -131,6 +122,34 @@
             this.orderToolStripMenuItem.Name = "orderToolStripMenuItem";
             this.orderToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.orderToolStripMenuItem.Text = "Order...";
+            // 
+            // openToolStripMenuItem
+            // 
+            this.openToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.invoiceToolStripMenuItem});
+            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
+            this.openToolStripMenuItem.Text = "Open";
+            // 
+            // invoiceToolStripMenuItem
+            // 
+            this.invoiceToolStripMenuItem.Name = "invoiceToolStripMenuItem";
+            this.invoiceToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.invoiceToolStripMenuItem.Text = "Invoice...";
+            // 
+            // editToolStripMenuItem
+            // 
+            this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.orderToolStripMenuItem2});
+            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
+            this.editToolStripMenuItem.Text = "Edit";
+            // 
+            // orderToolStripMenuItem2
+            // 
+            this.orderToolStripMenuItem2.Name = "orderToolStripMenuItem2";
+            this.orderToolStripMenuItem2.Size = new System.Drawing.Size(113, 22);
+            this.orderToolStripMenuItem2.Text = "Order...";
             // 
             // findToolStripMenuItem
             // 
@@ -160,26 +179,6 @@
             this.desinerToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.desinerToolStripMenuItem.Text = "Desiner...";
             // 
-            // orderToolStripMenuItem2
-            // 
-            this.orderToolStripMenuItem2.Name = "orderToolStripMenuItem2";
-            this.orderToolStripMenuItem2.Size = new System.Drawing.Size(113, 22);
-            this.orderToolStripMenuItem2.Text = "Order...";
-            // 
-            // openToolStripMenuItem
-            // 
-            this.openToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.invoiceToolStripMenuItem});
-            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
-            this.openToolStripMenuItem.Text = "Open";
-            // 
-            // invoiceToolStripMenuItem
-            // 
-            this.invoiceToolStripMenuItem.Name = "invoiceToolStripMenuItem";
-            this.invoiceToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
-            this.invoiceToolStripMenuItem.Text = "Invoice...";
-            // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
@@ -195,6 +194,16 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(190, 260);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::WindowsFormsApp1.Properties.Resources._35400607_1287156498083897_4298805785581846528_o;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(187, 170);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
             // flowLayoutPanel2
             // 
             this.flowLayoutPanel2.Controls.Add(this.lblLogName);
@@ -209,43 +218,33 @@
             // lblLogName
             // 
             this.lblLogName.AutoSize = true;
-            this.lblLogName.Font = new System.Drawing.Font("Schadow BT", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLogName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLogName.Location = new System.Drawing.Point(3, 0);
             this.lblLogName.Name = "lblLogName";
-            this.lblLogName.Size = new System.Drawing.Size(110, 19);
+            this.lblLogName.Size = new System.Drawing.Size(115, 20);
             this.lblLogName.TabIndex = 2;
             this.lblLogName.Text = "Umair Ramzan";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Schadow BT", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 35);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 16);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "ID:010101";
-            this.label1.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Schadow BT", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(3, 19);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(3, 20);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 16);
+            this.label2.Size = new System.Drawing.Size(62, 16);
             this.label2.TabIndex = 4;
             this.label2.Text = "Manager";
             // 
-            // pictureBox1
+            // label1
             // 
-            this.pictureBox1.Image = global::WindowsFormsApp1.Properties.Resources._35400607_1287156498083897_4298805785581846528_o;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(187, 170);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(3, 36);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(66, 16);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "ID:010101";
+            this.label1.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // button1
             // 
@@ -289,21 +288,31 @@
             // 
             this.OrderNo.HeaderText = "OrderNo";
             this.OrderNo.Name = "OrderNo";
+            this.OrderNo.ReadOnly = true;
             // 
             // CustomerName
             // 
             this.CustomerName.HeaderText = "Customer Name";
             this.CustomerName.Name = "CustomerName";
+            this.CustomerName.ReadOnly = true;
             // 
             // product
             // 
             this.product.HeaderText = "Product";
             this.product.Name = "product";
+            this.product.ReadOnly = true;
             // 
             // Status
             // 
             this.Status.HeaderText = "Status";
             this.Status.Name = "Status";
+            this.Status.ReadOnly = true;
+            // 
+            // Designer
+            // 
+            this.Designer.HeaderText = "Designer";
+            this.Designer.Name = "Designer";
+            this.Designer.ReadOnly = true;
             // 
             // dataGridView2
             // 
@@ -325,21 +334,19 @@
             // 
             this.CustID.HeaderText = "CustomerID";
             this.CustID.Name = "CustID";
+            this.CustID.ReadOnly = true;
             // 
             // CustName
             // 
             this.CustName.HeaderText = "Customer Name";
             this.CustName.Name = "CustName";
+            this.CustName.ReadOnly = true;
             // 
             // RecentOrder
             // 
             this.RecentOrder.HeaderText = "Recent Order";
             this.RecentOrder.Name = "RecentOrder";
-            // 
-            // Designer
-            // 
-            this.Designer.HeaderText = "Designer";
-            this.Designer.Name = "Designer";
+            this.RecentOrder.ReadOnly = true;
             // 
             // button3
             // 
@@ -394,15 +401,6 @@
             this.comboBox1.TabIndex = 11;
             this.comboBox1.Text = "Select Reciever";
             // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(1264, 273);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 27);
-            this.button7.TabIndex = 12;
-            this.button7.Text = "Notify";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
             // button8
             // 
             this.button8.Location = new System.Drawing.Point(1183, 273);
@@ -425,7 +423,7 @@
             // 
             this.richTextBox2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.richTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.richTextBox2.Font = new System.Drawing.Font("Schadow BT", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox2.Location = new System.Drawing.Point(1046, 369);
             this.richTextBox2.Name = "richTextBox2";
             this.richTextBox2.ReadOnly = true;
@@ -437,20 +435,20 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Schadow BT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(1042, 344);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(155, 22);
+            this.label3.Size = new System.Drawing.Size(154, 24);
             this.label3.TabIndex = 16;
             this.label3.Text = "Your Messages";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Schadow BT", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(1042, 48);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(145, 22);
+            this.label4.Size = new System.Drawing.Size(149, 24);
             this.label4.TabIndex = 17;
             this.label4.Text = "Send Message";
             // 
@@ -465,7 +463,6 @@
             this.Controls.Add(this.button10);
             this.Controls.Add(this.richTextBox2);
             this.Controls.Add(this.button8);
-            this.Controls.Add(this.button7);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.button6);
@@ -487,9 +484,9 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.flowLayoutPanel2.ResumeLayout(false);
             this.flowLayoutPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
@@ -537,7 +534,6 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.RichTextBox richTextBox2;
