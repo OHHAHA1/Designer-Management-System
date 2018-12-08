@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp1;
+using WindowsFormsApp1.Model;
 
 namespace WindowsFormsApp1
 {
@@ -33,12 +34,24 @@ namespace WindowsFormsApp1
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (txtUsername.Text == "" && txtPassword.Text == "") // need to be update later
+            string username = txtUsername.Text;
+            string password = txtPassword.Text;
+  
+            if (Database.checkLogin(username,password)) // checking with database password
             {
-                Console.Write("Password is correct");
-                frmManager frmMan = new frmManager();
-                this.Hide();
-                frmMan.ShowDialog();
+                string type = Database.getLoginType(username);
+                if (type=="Designer")
+                {
+                    Console.Write("Designer");
+                     frmDesigner nextForm = new frmDesigner(username);
+                     nextForm.ShowDialog();
+                }
+                else if (type == "Manager") {
+                    Console.Write("Designer");
+                    frmManager nextForm = new frmManager();
+                     nextForm.ShowDialog();
+                }   
+                this.Close();
             }
             
         }
