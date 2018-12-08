@@ -29,26 +29,26 @@
         private void InitializeComponent()
         {
             this.Sidebar = new System.Windows.Forms.FlowLayoutPanel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.rtxtMessages = new System.Windows.Forms.RichTextBox();
+            this.btnMessages = new System.Windows.Forms.Button();
+            this.btnReply = new System.Windows.Forms.Button();
+            this.btnSubmitDesign = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.txtDesignType = new System.Windows.Forms.TextBox();
+            this.txtOrderNum = new System.Windows.Forms.TextBox();
+            this.txtCustomerName = new System.Windows.Forms.TextBox();
+            this.picUser = new System.Windows.Forms.PictureBox();
+            this.lblName = new System.Windows.Forms.Label();
+            this.btnLogout = new System.Windows.Forms.Button();
+            this.lblUsername = new System.Windows.Forms.Label();
+            this.btnDetails = new System.Windows.Forms.Button();
+            this.btnAcceptJob = new System.Windows.Forms.Button();
+            this.btnAcceptRevision = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button7 = new System.Windows.Forms.Button();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.button8 = new System.Windows.Forms.Button();
+            this.btnEditAccount = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.OrderID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,7 +57,7 @@
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sidebar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picUser)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -65,9 +65,9 @@
             // 
             // Sidebar
             // 
-            this.Sidebar.Controls.Add(this.richTextBox1);
-            this.Sidebar.Controls.Add(this.button8);
-            this.Sidebar.Controls.Add(this.button3);
+            this.Sidebar.Controls.Add(this.rtxtMessages);
+            this.Sidebar.Controls.Add(this.btnMessages);
+            this.Sidebar.Controls.Add(this.btnReply);
             this.Sidebar.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.Sidebar.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.Sidebar.Location = new System.Drawing.Point(0, 404);
@@ -76,23 +76,40 @@
             this.Sidebar.TabIndex = 3;
             this.Sidebar.Paint += new System.Windows.Forms.PaintEventHandler(this.Sidebar_Paint);
             // 
-            // button2
+            // rtxtMessages
             // 
-            this.button2.Location = new System.Drawing.Point(446, 135);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(110, 24);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Submit Designs";
-            this.button2.UseVisualStyleBackColor = true;
+            this.rtxtMessages.Location = new System.Drawing.Point(3, 3);
+            this.rtxtMessages.Name = "rtxtMessages";
+            this.rtxtMessages.Size = new System.Drawing.Size(541, 54);
+            this.rtxtMessages.TabIndex = 6;
+            this.rtxtMessages.Text = "";
             // 
-            // button3
+            // btnMessages
             // 
-            this.button3.Location = new System.Drawing.Point(550, 33);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(128, 24);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "Reply";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnMessages.Location = new System.Drawing.Point(550, 3);
+            this.btnMessages.Name = "btnMessages";
+            this.btnMessages.Size = new System.Drawing.Size(128, 24);
+            this.btnMessages.TabIndex = 7;
+            this.btnMessages.Text = "Messages";
+            this.btnMessages.UseVisualStyleBackColor = true;
+            // 
+            // btnReply
+            // 
+            this.btnReply.Location = new System.Drawing.Point(550, 33);
+            this.btnReply.Name = "btnReply";
+            this.btnReply.Size = new System.Drawing.Size(128, 24);
+            this.btnReply.TabIndex = 5;
+            this.btnReply.Text = "Reply";
+            this.btnReply.UseVisualStyleBackColor = true;
+            // 
+            // btnSubmitDesign
+            // 
+            this.btnSubmitDesign.Location = new System.Drawing.Point(446, 135);
+            this.btnSubmitDesign.Name = "btnSubmitDesign";
+            this.btnSubmitDesign.Size = new System.Drawing.Size(110, 24);
+            this.btnSubmitDesign.TabIndex = 4;
+            this.btnSubmitDesign.Text = "Submit Designs";
+            this.btnSubmitDesign.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -132,97 +149,102 @@
             this.label8.TabIndex = 11;
             this.label8.Text = "Design Type:";
             // 
-            // textBox1
+            // txtDesignType
             // 
-            this.textBox1.Location = new System.Drawing.Point(459, 41);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(178, 20);
-            this.textBox1.TabIndex = 12;
+            this.txtDesignType.Location = new System.Drawing.Point(459, 41);
+            this.txtDesignType.Name = "txtDesignType";
+            this.txtDesignType.ReadOnly = true;
+            this.txtDesignType.Size = new System.Drawing.Size(178, 20);
+            this.txtDesignType.TabIndex = 12;
             // 
-            // textBox2
+            // txtOrderNum
             // 
-            this.textBox2.Location = new System.Drawing.Point(459, 70);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(178, 20);
-            this.textBox2.TabIndex = 13;
+            this.txtOrderNum.Location = new System.Drawing.Point(459, 70);
+            this.txtOrderNum.Name = "txtOrderNum";
+            this.txtOrderNum.ReadOnly = true;
+            this.txtOrderNum.Size = new System.Drawing.Size(178, 20);
+            this.txtOrderNum.TabIndex = 13;
             // 
-            // textBox3
+            // txtCustomerName
             // 
-            this.textBox3.Location = new System.Drawing.Point(459, 100);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(178, 20);
-            this.textBox3.TabIndex = 14;
+            this.txtCustomerName.Location = new System.Drawing.Point(459, 100);
+            this.txtCustomerName.Name = "txtCustomerName";
+            this.txtCustomerName.ReadOnly = true;
+            this.txtCustomerName.Size = new System.Drawing.Size(178, 20);
+            this.txtCustomerName.TabIndex = 14;
             // 
-            // pictureBox1
+            // picUser
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(6, 19);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(117, 132);
-            this.pictureBox1.TabIndex = 15;
-            this.pictureBox1.TabStop = false;
+            this.picUser.Location = new System.Drawing.Point(6, 19);
+            this.picUser.Name = "picUser";
+            this.picUser.Size = new System.Drawing.Size(117, 132);
+            this.picUser.TabIndex = 15;
+            this.picUser.TabStop = false;
             // 
-            // label2
+            // lblName
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(129, 29);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(111, 13);
-            this.label2.TabIndex = 16;
-            this.label2.Text = "First Name Last Name";
+            this.lblName.AutoSize = true;
+            this.lblName.Location = new System.Drawing.Point(129, 29);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(111, 13);
+            this.lblName.TabIndex = 16;
+            this.lblName.Text = "First Name Last Name";
             // 
-            // button1
+            // btnLogout
             // 
-            this.button1.Location = new System.Drawing.Point(141, 99);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(95, 23);
-            this.button1.TabIndex = 17;
-            this.button1.Text = "Logout";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnLogout.Location = new System.Drawing.Point(141, 99);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(95, 23);
+            this.btnLogout.TabIndex = 17;
+            this.btnLogout.Text = "Logout";
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
-            // label3
+            // lblUsername
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(187, 42);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 13);
-            this.label3.TabIndex = 18;
-            this.label3.Text = "username";
+            this.lblUsername.AutoSize = true;
+            this.lblUsername.Location = new System.Drawing.Point(187, 42);
+            this.lblUsername.Name = "lblUsername";
+            this.lblUsername.Size = new System.Drawing.Size(53, 13);
+            this.lblUsername.TabIndex = 18;
+            this.lblUsername.Text = "username";
+            this.lblUsername.Click += new System.EventHandler(this.lblUsername_Click);
             // 
-            // button4
+            // btnDetails
             // 
-            this.button4.Location = new System.Drawing.Point(562, 136);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 19;
-            this.button4.Text = "Details";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.btnDetails.Location = new System.Drawing.Point(562, 136);
+            this.btnDetails.Name = "btnDetails";
+            this.btnDetails.Size = new System.Drawing.Size(75, 23);
+            this.btnDetails.TabIndex = 19;
+            this.btnDetails.Text = "Details";
+            this.btnDetails.UseVisualStyleBackColor = true;
+            this.btnDetails.Click += new System.EventHandler(this.button4_Click);
             // 
-            // button5
+            // btnAcceptJob
             // 
-            this.button5.Location = new System.Drawing.Point(12, 363);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(263, 24);
-            this.button5.TabIndex = 6;
-            this.button5.Text = "Accept";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnAcceptJob.Location = new System.Drawing.Point(12, 363);
+            this.btnAcceptJob.Name = "btnAcceptJob";
+            this.btnAcceptJob.Size = new System.Drawing.Size(263, 24);
+            this.btnAcceptJob.TabIndex = 6;
+            this.btnAcceptJob.Text = "Accept";
+            this.btnAcceptJob.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // btnAcceptRevision
             // 
-            this.button6.Location = new System.Drawing.Point(562, 363);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(118, 24);
-            this.button6.TabIndex = 7;
-            this.button6.Text = "Accept Revision";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnAcceptRevision.Location = new System.Drawing.Point(562, 363);
+            this.btnAcceptRevision.Name = "btnAcceptRevision";
+            this.btnAcceptRevision.Size = new System.Drawing.Size(118, 24);
+            this.btnAcceptRevision.TabIndex = 7;
+            this.btnAcceptRevision.Text = "Accept Revision";
+            this.btnAcceptRevision.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button7);
-            this.groupBox1.Controls.Add(this.pictureBox1);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.btnEditAccount);
+            this.groupBox1.Controls.Add(this.picUser);
+            this.groupBox1.Controls.Add(this.lblName);
+            this.groupBox1.Controls.Add(this.lblUsername);
+            this.groupBox1.Controls.Add(this.btnLogout);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(254, 172);
@@ -231,31 +253,14 @@
             this.groupBox1.Text = "User Details";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // button7
+            // btnEditAccount
             // 
-            this.button7.Location = new System.Drawing.Point(141, 128);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(95, 23);
-            this.button7.TabIndex = 19;
-            this.button7.Text = "Edit Account";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Location = new System.Drawing.Point(3, 3);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(541, 54);
-            this.richTextBox1.TabIndex = 6;
-            this.richTextBox1.Text = "";
-            // 
-            // button8
-            // 
-            this.button8.Location = new System.Drawing.Point(550, 3);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(128, 24);
-            this.button8.TabIndex = 7;
-            this.button8.Text = "Messages";
-            this.button8.UseVisualStyleBackColor = true;
+            this.btnEditAccount.Location = new System.Drawing.Point(141, 128);
+            this.btnEditAccount.Name = "btnEditAccount";
+            this.btnEditAccount.Size = new System.Drawing.Size(95, 23);
+            this.btnEditAccount.TabIndex = 19;
+            this.btnEditAccount.Text = "Edit Account";
+            this.btnEditAccount.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
             // 
@@ -324,13 +329,13 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.btnAcceptJob);
+            this.Controls.Add(this.btnDetails);
+            this.Controls.Add(this.btnAcceptRevision);
+            this.Controls.Add(this.btnSubmitDesign);
+            this.Controls.Add(this.txtCustomerName);
+            this.Controls.Add(this.txtOrderNum);
+            this.Controls.Add(this.txtDesignType);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label4);
@@ -338,8 +343,9 @@
             this.Controls.Add(this.Sidebar);
             this.Name = "frmDesigner";
             this.Text = "Desinger";
+            this.Load += new System.EventHandler(this.frmDesigner_Load);
             this.Sidebar.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picUser)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -351,26 +357,26 @@
 
         #endregion
         private System.Windows.Forms.FlowLayoutPanel Sidebar;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnSubmitDesign;
+        private System.Windows.Forms.Button btnReply;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.TextBox txtDesignType;
+        private System.Windows.Forms.TextBox txtOrderNum;
+        private System.Windows.Forms.TextBox txtCustomerName;
+        private System.Windows.Forms.PictureBox picUser;
+        private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.Button btnLogout;
+        private System.Windows.Forms.Label lblUsername;
+        private System.Windows.Forms.Button btnDetails;
+        private System.Windows.Forms.Button btnAcceptJob;
+        private System.Windows.Forms.Button btnAcceptRevision;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button btnEditAccount;
+        private System.Windows.Forms.RichTextBox rtxtMessages;
+        private System.Windows.Forms.Button btnMessages;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn OrderID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Description;

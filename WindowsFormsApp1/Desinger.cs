@@ -7,14 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1.Model;
+
+
 
 namespace WindowsFormsApp1
 {
     public partial class frmDesigner : Form
     {
-        public frmDesigner()
+        public frmDesigner(string username)
         {
             InitializeComponent();
+            lblUsername.Text = username;
+            lblName.Text = Database.getName(username);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -54,6 +59,28 @@ namespace WindowsFormsApp1
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+
+        }
+
+        private void lblUsername_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmDesigner_Load(object sender, EventArgs e)
+        {
+
+            
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+           DialogResult logout= MessageBox.Show( "Are You Sure?", "Logout", MessageBoxButtons.YesNo);
+            if (logout == DialogResult.Yes)
+            {
+                // should get back to login form
+                this.Close();
+            }
 
         }
     }
