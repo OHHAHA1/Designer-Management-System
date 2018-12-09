@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using WindowsFormsApp1;
 using System.Data.SqlClient;
+using System.Data;
 
 namespace WindowsFormsApp1.Model
 {
@@ -29,6 +30,31 @@ namespace WindowsFormsApp1.Model
             }
                     
     }
+
+
+        public static DataTable populateJobRequest(String username)
+        {
+            DataTable table = new DataTable();
+            table.Columns.Add("Order ID", typeof(int));
+            table.Columns.Add("Product Type", typeof(string));
+            table.Columns.Add("Description", typeof(string));
+
+            string query = "SELECT ORDERS.order_id,ORDERS.product_type,ORDERS.description FROM ASSIGNED_ORDERS, ORDERS WHERE designer = '" + username + "' AND ASSIGNED_ORDERS.order_id = ORDERS.order_id;";
+            SqlConnection conn = connectDB();
+            if (conn != null)
+            {
+                SqlCommand cmd = new SqlCommand(query, conn);
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                   table.Rows.Add(reader.GetInt32(0),reader.GetString(1), reader.GetString(2));
+                }
+
+            }
+            //retervie data from database
+            return table;
+
+        }
 
 
         public static string getName(string username)
@@ -94,6 +120,43 @@ namespace WindowsFormsApp1.Model
             //retervie data from database
             return "N/A";
            
+        }
+
+        private static DataTable populateJobRequest()
+        {
+            System.Data.DataTable table = new DataTable();
+            table.Columns.Add("Order ID", typeof(string));
+            table.Columns.Add("Description", typeof(string));
+
+
+
+
+            table.Rows.Add("ODR-001", "This is fucking descripting");
+            table.Rows.Add("ODR-002", "This is another fucking descripting");
+            table.Rows.Add("ODR-003", "This is one more fucking descripting");
+
+            return table;
+
+        }
+
+        public static string getRecentMessage(string to_username)
+        {
+          
+
+            SqlConnection conn = connectDB();
+            string query = "SELECT TOP 1 from_user,Message FROM MESSAGES WHERE to_user = '"+to_username+"' ORDER BY time DESC";
+            if (conn != null)
+            {
+                SqlCommand cmd = new SqlCommand(query, conn);
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    string message = reader.GetString(0) + " : " + reader.GetString(1);
+                    return message;
+                }
+
+            }
+            return null;
         }
 
 

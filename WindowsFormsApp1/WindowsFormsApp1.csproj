@@ -32,6 +32,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -45,6 +46,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DesignerSubViews\Copying.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DesignerSubViews\Copying.Designer.cs">
+      <DependentUpon>Copying.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DesignerSubViews\Current Job Details.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DesignerSubViews\Current Job Details.Designer.cs">
+      <DependentUpon>Current Job Details.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DesignerSubViews\Submit Design.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DesignerSubViews\Submit Design.Designer.cs">
+      <DependentUpon>Submit Design.cs</DependentUpon>
+    </Compile>
     <Compile Include="Desinger.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,6 +85,15 @@
     <Compile Include="Model\Database.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="DesignerSubViews\Copying.resx">
+      <DependentUpon>Copying.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DesignerSubViews\Current Job Details.resx">
+      <DependentUpon>Current Job Details.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DesignerSubViews\Submit Design.resx">
+      <DependentUpon>Submit Design.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Desinger.resx">
       <DependentUpon>Desinger.cs</DependentUpon>
     </EmbeddedResource>

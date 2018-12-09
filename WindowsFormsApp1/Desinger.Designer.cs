@@ -35,12 +35,9 @@
             this.btnSubmitDesign = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.txtDesignType = new System.Windows.Forms.TextBox();
             this.txtOrderNum = new System.Windows.Forms.TextBox();
-            this.txtCustomerName = new System.Windows.Forms.TextBox();
-            this.picUser = new System.Windows.Forms.PictureBox();
             this.lblName = new System.Windows.Forms.Label();
             this.btnLogout = new System.Windows.Forms.Button();
             this.lblUsername = new System.Windows.Forms.Label();
@@ -49,18 +46,15 @@
             this.btnAcceptRevision = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnEditAccount = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.OrderID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridJobRequest = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridRevision = new System.Windows.Forms.DataGridView();
+            this.picUser = new System.Windows.Forms.PictureBox();
             this.Sidebar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picUser)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridJobRequest)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridRevision)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picUser)).BeginInit();
             this.SuspendLayout();
             // 
             // Sidebar
@@ -110,11 +104,12 @@
             this.btnSubmitDesign.TabIndex = 4;
             this.btnSubmitDesign.Text = "Submit Designs";
             this.btnSubmitDesign.UseVisualStyleBackColor = true;
+            this.btnSubmitDesign.Click += new System.EventHandler(this.btnSubmitDesign_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(576, 12);
+            this.label1.Location = new System.Drawing.Point(575, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(61, 13);
             this.label1.TabIndex = 4;
@@ -125,25 +120,16 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(366, 79);
+            this.label4.Location = new System.Drawing.Point(366, 91);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(76, 13);
             this.label4.TabIndex = 7;
             this.label4.Text = "Order Number:";
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(366, 107);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(85, 13);
-            this.label7.TabIndex = 10;
-            this.label7.Text = "Customer Name:";
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(366, 48);
+            this.label8.Location = new System.Drawing.Point(366, 56);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(70, 13);
             this.label8.TabIndex = 11;
@@ -151,7 +137,7 @@
             // 
             // txtDesignType
             // 
-            this.txtDesignType.Location = new System.Drawing.Point(459, 41);
+            this.txtDesignType.Location = new System.Drawing.Point(459, 49);
             this.txtDesignType.Name = "txtDesignType";
             this.txtDesignType.ReadOnly = true;
             this.txtDesignType.Size = new System.Drawing.Size(178, 20);
@@ -159,27 +145,11 @@
             // 
             // txtOrderNum
             // 
-            this.txtOrderNum.Location = new System.Drawing.Point(459, 70);
+            this.txtOrderNum.Location = new System.Drawing.Point(459, 87);
             this.txtOrderNum.Name = "txtOrderNum";
             this.txtOrderNum.ReadOnly = true;
             this.txtOrderNum.Size = new System.Drawing.Size(178, 20);
             this.txtOrderNum.TabIndex = 13;
-            // 
-            // txtCustomerName
-            // 
-            this.txtCustomerName.Location = new System.Drawing.Point(459, 100);
-            this.txtCustomerName.Name = "txtCustomerName";
-            this.txtCustomerName.ReadOnly = true;
-            this.txtCustomerName.Size = new System.Drawing.Size(178, 20);
-            this.txtCustomerName.TabIndex = 14;
-            // 
-            // picUser
-            // 
-            this.picUser.Location = new System.Drawing.Point(6, 19);
-            this.picUser.Name = "picUser";
-            this.picUser.Size = new System.Drawing.Size(117, 132);
-            this.picUser.TabIndex = 15;
-            this.picUser.TabStop = false;
             // 
             // lblName
             // 
@@ -228,6 +198,7 @@
             this.btnAcceptJob.TabIndex = 6;
             this.btnAcceptJob.Text = "Accept";
             this.btnAcceptJob.UseVisualStyleBackColor = true;
+            this.btnAcceptJob.Click += new System.EventHandler(this.btnAcceptJob_Click);
             // 
             // btnAcceptRevision
             // 
@@ -262,29 +233,16 @@
             this.btnEditAccount.Text = "Edit Account";
             this.btnEditAccount.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dataGridJobRequest
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.OrderID,
-            this.Description});
-            this.dataGridView1.Location = new System.Drawing.Point(13, 224);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(262, 133);
-            this.dataGridView1.TabIndex = 21;
-            // 
-            // OrderID
-            // 
-            this.OrderID.HeaderText = "Order ID";
-            this.OrderID.Name = "OrderID";
-            this.OrderID.ReadOnly = true;
-            // 
-            // Description
-            // 
-            this.Description.HeaderText = "Description";
-            this.Description.Name = "Description";
-            this.Description.ReadOnly = true;
+            this.dataGridJobRequest.AllowUserToAddRows = false;
+            this.dataGridJobRequest.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridJobRequest.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridJobRequest.Location = new System.Drawing.Point(13, 224);
+            this.dataGridJobRequest.Name = "dataGridJobRequest";
+            this.dataGridJobRequest.Size = new System.Drawing.Size(262, 133);
+            this.dataGridJobRequest.TabIndex = 21;
+            this.dataGridJobRequest.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridJobRequest_CellClick);
             // 
             // label5
             // 
@@ -295,61 +253,54 @@
             this.label5.TabIndex = 22;
             this.label5.Text = "Job Requests";
             // 
-            // dataGridView2
+            // dataGridRevision
             // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2});
-            this.dataGridView2.Location = new System.Drawing.Point(369, 224);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(309, 133);
-            this.dataGridView2.TabIndex = 23;
-            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
+            this.dataGridRevision.AllowUserToAddRows = false;
+            this.dataGridRevision.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridRevision.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridRevision.Location = new System.Drawing.Point(369, 224);
+            this.dataGridRevision.Name = "dataGridRevision";
+            this.dataGridRevision.Size = new System.Drawing.Size(309, 133);
+            this.dataGridRevision.TabIndex = 23;
+            this.dataGridRevision.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
-            // dataGridViewTextBoxColumn1
+            // picUser
             // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "Order ID";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "Revisions";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.picUser.Location = new System.Drawing.Point(6, 19);
+            this.picUser.Name = "picUser";
+            this.picUser.Size = new System.Drawing.Size(117, 132);
+            this.picUser.TabIndex = 15;
+            this.picUser.TabStop = false;
             // 
             // frmDesigner
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(692, 467);
-            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.dataGridRevision);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridJobRequest);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnAcceptJob);
             this.Controls.Add(this.btnDetails);
             this.Controls.Add(this.btnAcceptRevision);
             this.Controls.Add(this.btnSubmitDesign);
-            this.Controls.Add(this.txtCustomerName);
             this.Controls.Add(this.txtOrderNum);
             this.Controls.Add(this.txtDesignType);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Sidebar);
             this.Name = "frmDesigner";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Desinger";
             this.Load += new System.EventHandler(this.frmDesigner_Load);
             this.Sidebar.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picUser)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridJobRequest)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridRevision)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picUser)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -361,11 +312,9 @@
         private System.Windows.Forms.Button btnReply;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtDesignType;
         private System.Windows.Forms.TextBox txtOrderNum;
-        private System.Windows.Forms.TextBox txtCustomerName;
         private System.Windows.Forms.PictureBox picUser;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Button btnLogout;
@@ -377,12 +326,8 @@
         private System.Windows.Forms.Button btnEditAccount;
         private System.Windows.Forms.RichTextBox rtxtMessages;
         private System.Windows.Forms.Button btnMessages;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn OrderID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Description;
+        private System.Windows.Forms.DataGridView dataGridJobRequest;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridView dataGridRevision;
     }
 }

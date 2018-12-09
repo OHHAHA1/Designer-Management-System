@@ -8,17 +8,22 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp1.Model;
+using WindowsFormsApp1.DesignerSubViews;
 
 
 
 namespace WindowsFormsApp1
 {
+    
     public partial class frmDesigner : Form
     {
+        int selectedRow;
+        string username;
         public frmDesigner(string username)
         {
             InitializeComponent();
             lblUsername.Text = username;
+            this.username = username;
             lblName.Text = Database.getName(username);
         }
 
@@ -69,9 +74,27 @@ namespace WindowsFormsApp1
 
         private void frmDesigner_Load(object sender, EventArgs e)
         {
+            dataGridJobRequest.DataSource = Database.populateJobRequest(lblUsername.Text);
+            populateRevisionRequest();
+            rtxtMessages.Text = Database.getRecentMessage(username);
 
-            
+
         }
+
+        private void populateRevisionRequest()
+        {
+            DataTable table = new DataTable();
+            table.Columns.Add("Order ID", typeof(string));
+            table.Columns.Add("Revision", typeof(string));
+
+            table.Rows.Add("ODR-001", "This is fucking change");
+            table.Rows.Add("ODR-002", "This is another fucking change");
+            table.Rows.Add("ODR-003", "This is one more fucking change");
+
+            dataGridRevision.DataSource = table;
+        }
+
+        
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
@@ -82,6 +105,31 @@ namespace WindowsFormsApp1
                 this.Close();
             }
 
+        }
+
+        private void btnAcceptJob_Click(object sender, EventArgs e)
+        {
+            
+            DialogResult logout = MessageBox.Show("Do you Want to Accept Job Request"+"", "Logout", MessageBoxButtons.YesNo);
+            if (logout == DialogResult.Yes)
+            {
+                //set to accepted order
+                DataGridViewRow row = dataGridJobRequest.Rows[selectedRow];
+                txtOrderNum.Text= row.Cells[0].Value.ToString();
+                txtDesignType.Text = row.Cells[1].Value.ToString();
+
+            }
+        }
+
+        private void dataGridJobRequest_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            selectedRow = e.RowIndex;
+        }
+
+        private void btnSubmitDesign_Click(object sender, EventArgs e)
+        {
+            frmSubmitDesign submit = new frmSubmitDesign(txtOrderNum.Text,txtDesignType.Text);
+            submit.Show();
         }
     }
 }
