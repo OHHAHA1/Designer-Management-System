@@ -44,15 +44,21 @@ namespace WindowsFormsApp1
                 {
                     Console.Write("Designer");
                      frmDesigner nextForm = new frmDesigner(username);
-                     nextForm.ShowDialog();
+                    this.Hide();
+                    nextForm.ShowDialog();
                 }
                 else if (type == "Manager") {
                     Console.Write("Designer");
                     frmManager nextForm = new frmManager();
-                     nextForm.ShowDialog();
+                    this.Hide();
+                    nextForm.ShowDialog();
                 }   
                 this.Close();
             }
+            else {
+                MessageBox.Show("Check your username or password", "Login Failed!", MessageBoxButtons.OK);
+            }
+
             
         }
 
