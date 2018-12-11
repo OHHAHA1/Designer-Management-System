@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using WindowsFormsApp1.Model;
 
 namespace WindowsFormsApp1
 {
@@ -17,16 +18,17 @@ namespace WindowsFormsApp1
         SqlDataReader reader = null;
         String chat_id;
         SqlCommand command;
-        String user = "Shehan";
+        String user =null;
 
-        public frmChatInterface()
+        public frmChatInterface(String user)
         {
             InitializeComponent();
+            this.user = user;
         }
 
         private void frmChatInterface_Load(object sender, EventArgs e)
         {
-            conn.Open();
+            conn = Database.connectDB();
             // Need to change the query
             // Get all the users except PRIMARY USER (Logged user)
             command = new SqlCommand("SELECT DISTINCT from_user FROM messages WHERE from_user != '" + user +"'", conn);
@@ -153,6 +155,11 @@ namespace WindowsFormsApp1
             }
 
             conn.Close();
+
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
 
         }
     }

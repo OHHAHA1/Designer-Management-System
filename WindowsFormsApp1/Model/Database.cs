@@ -13,7 +13,7 @@ namespace WindowsFormsApp1.Model
         
 
 
-        private static SqlConnection connectDB()
+        public static SqlConnection connectDB()
         {
              string connString = " Data Source = (local); Initial Catalog = catographics; Integrated Security = True";
              SqlConnection conn = new SqlConnection(connString);
