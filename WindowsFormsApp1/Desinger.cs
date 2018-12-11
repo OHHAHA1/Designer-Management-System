@@ -114,6 +114,7 @@ namespace WindowsFormsApp1
 
         }
 
+
         private void btnAcceptJob_Click(object sender, EventArgs e)
         {
             
@@ -146,6 +147,7 @@ namespace WindowsFormsApp1
                 Hide();
                 notifyIcon1.Visible = true;
             }
+
         }
     }
 }
