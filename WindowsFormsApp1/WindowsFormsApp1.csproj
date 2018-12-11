@@ -51,6 +51,12 @@
     <Compile Include="Desinger.Designer.cs">
       <DependentUpon>Desinger.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmChatInterface.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChatInterface.Designer.cs">
+      <DependentUpon>frmChatInterface.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmManager.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,6 +74,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Desinger.resx">
       <DependentUpon>Desinger.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmChatInterface.resx">
+      <DependentUpon>frmChatInterface.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
@@ -109,6 +118,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\35400607_1287156498083897_4298805785581846528_o.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="System\Windows\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
