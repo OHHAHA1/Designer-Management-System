@@ -17,7 +17,7 @@ namespace WindowsFormsApp1
         SqlDataReader reader = null;
         String chat_id;
         SqlCommand command;
-        String user = "Shehan";
+        String user = "Shehan"; //Logged user first name
 
         public frmChatInterface()
         {

@@ -119,7 +119,7 @@
             this.ClientSize = new System.Drawing.Size(1073, 627);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "frmChatInterface";
-            this.Text = "frmChatInterface";
+            this.Text = "Chat Screen";
             this.Load += new System.EventHandler(this.frmChatInterface_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
