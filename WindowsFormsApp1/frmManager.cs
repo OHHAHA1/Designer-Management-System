@@ -19,6 +19,7 @@ namespace WindowsFormsApp1
         public frmManager()
         {
             InitializeComponent();
+            
         }
 
         private void customerToolStripMenuItem_Click(object sender, EventArgs e)

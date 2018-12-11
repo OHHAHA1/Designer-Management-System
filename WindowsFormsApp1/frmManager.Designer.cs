@@ -474,6 +474,7 @@
             // 
             // customerBindingSource2
             // 
+
             this.customerBindingSource2.DataSource = typeof(WindowsFormsApp1.Customer);
             // 
             // frmManager
@@ -481,6 +482,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+
             this.ClientSize = new System.Drawing.Size(968, 666);
             this.Controls.Add(this.btnInvoice);
             this.Controls.Add(this.btnMessage);
@@ -488,6 +490,8 @@
             this.Controls.Add(this.btnDeleteCustomer);
             this.Controls.Add(this.btnEditCustomer);
             this.Controls.Add(this.btnEdit);
+
+
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.btnNewCustomer);
@@ -546,6 +550,7 @@
         private System.Windows.Forms.Button btnNewCustomer;
         private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.DataGridView dataGridView2;
+
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnEditCustomer;
         private System.Windows.Forms.Button btnDeleteCustomer;
@@ -568,5 +573,6 @@
         private System.Windows.Forms.Button btnMessage;
         private System.Windows.Forms.Button btnInvoice;
         private System.Windows.Forms.ToolTip toolTip1;
+
     }
 }

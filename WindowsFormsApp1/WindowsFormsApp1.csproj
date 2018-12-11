@@ -32,6 +32,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
@@ -40,6 +41,9 @@
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
+
+    <Reference Include="Microsoft.VisualBasic" />
+
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -56,6 +60,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+
     <Compile Include="Customer.cs">
       <DependentUpon>CustomerModel.tt</DependentUpon>
     </Compile>
@@ -91,6 +96,31 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Customer_DetModel.edmx</DependentUpon>
+
+    <Compile Include="DesignerSubViews\Copying.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DesignerSubViews\Copying.Designer.cs">
+      <DependentUpon>Copying.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DesignerSubViews\Current Job Details.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DesignerSubViews\Current Job Details.Designer.cs">
+      <DependentUpon>Current Job Details.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DesignerSubViews\EditProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DesignerSubViews\EditProfile.Designer.cs">
+      <DependentUpon>EditProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DesignerSubViews\Submit Design.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DesignerSubViews\Submit Design.Designer.cs">
+      <DependentUpon>Submit Design.cs</DependentUpon>
+
     </Compile>
     <Compile Include="Desinger.cs">
       <SubType>Form</SubType>
@@ -98,11 +128,19 @@
     <Compile Include="Desinger.Designer.cs">
       <DependentUpon>Desinger.cs</DependentUpon>
     </Compile>
+
     <Compile Include="frmCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmCustomer.Designer.cs">
       <DependentUpon>frmCustomer.cs</DependentUpon>
+
+    <Compile Include="frmChatInterface.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChatInterface.Designer.cs">
+      <DependentUpon>frmChatInterface.cs</DependentUpon>
+
     </Compile>
     <Compile Include="frmManager.cs">
       <SubType>Form</SubType>
@@ -116,6 +154,7 @@
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+
     <Compile Include="frmNewItem.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,13 +179,39 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>OrderModel.edmx</DependentUpon>
     </Compile>
+
+    <Compile Include="invoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="invoice.Designer.cs">
+      <DependentUpon>invoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Database.cs" />
+
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="DesignerSubViews\Copying.resx">
+      <DependentUpon>Copying.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DesignerSubViews\Current Job Details.resx">
+      <DependentUpon>Current Job Details.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DesignerSubViews\EditProfile.resx">
+      <DependentUpon>EditProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DesignerSubViews\Submit Design.resx">
+      <DependentUpon>Submit Design.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Desinger.resx">
       <DependentUpon>Desinger.cs</DependentUpon>
     </EmbeddedResource>
+
     <EmbeddedResource Include="frmCustomer.resx">
       <DependentUpon>frmCustomer.cs</DependentUpon>
+
+    <EmbeddedResource Include="frmChatInterface.resx">
+      <DependentUpon>frmChatInterface.cs</DependentUpon>
+
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
@@ -154,8 +219,13 @@
     <EmbeddedResource Include="frmManager.resx">
       <DependentUpon>frmManager.cs</DependentUpon>
     </EmbeddedResource>
+
     <EmbeddedResource Include="frmNewItem.resx">
       <DependentUpon>frmNewItem.cs</DependentUpon>
+
+    <EmbeddedResource Include="invoice.resx">
+      <DependentUpon>invoice.cs</DependentUpon>
+
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -218,6 +288,7 @@
     <None Include="Resources\35400607_1287156498083897_4298805785581846528_o.jpg" />
   </ItemGroup>
   <ItemGroup>
+
     <Content Include="CustomerModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>CustomerModel.edmx</DependentUpon>
@@ -251,6 +322,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+
+    <Folder Include="System\Windows\" />
+
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
