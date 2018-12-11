@@ -32,8 +32,19 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -45,11 +56,53 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Customer.cs">
+      <DependentUpon>CustomerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CustomerModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CustomerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CustomerModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Customer_Det.cs">
+      <DependentUpon>Customer_DetModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Customer_DetModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Customer_DetModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Customer_DetModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Customer_DetModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Customer_DetModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Customer_DetModel.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Desinger.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Desinger.Designer.cs">
       <DependentUpon>Desinger.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCustomer.Designer.cs">
+      <DependentUpon>frmCustomer.cs</DependentUpon>
     </Compile>
     <Compile Include="frmManager.cs">
       <SubType>Form</SubType>
@@ -63,16 +116,46 @@
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmNewItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmNewItem.Designer.cs">
+      <DependentUpon>frmNewItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Order.cs">
+      <DependentUpon>OrderModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrderModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrderModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrderModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrderModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrderModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrderModel.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Desinger.resx">
       <DependentUpon>Desinger.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCustomer.resx">
+      <DependentUpon>frmCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmManager.resx">
       <DependentUpon>frmManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmNewItem.resx">
+      <DependentUpon>frmNewItem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -84,6 +167,31 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EntityDeploy Include="OrderModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>OrderModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <EntityDeploy Include="CustomerModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>CustomerModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="CustomerModel.edmx.diagram">
+      <DependentUpon>CustomerModel.edmx</DependentUpon>
+    </None>
+    <EntityDeploy Include="Customer_DetModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Customer_DetModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Customer_DetModel.edmx.diagram">
+      <DependentUpon>Customer_DetModel.edmx</DependentUpon>
+    </None>
+    <None Include="OrderModel.edmx.diagram">
+      <DependentUpon>OrderModel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\Customer.datasource" />
+    <None Include="Properties\DataSources\Customer_Det.datasource" />
+    <None Include="Properties\DataSources\Order.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -108,6 +216,41 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\35400607_1287156498083897_4298805785581846528_o.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CustomerModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CustomerModel.edmx</DependentUpon>
+      <LastGenOutput>CustomerModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="CustomerModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CustomerModel.edmx</DependentUpon>
+      <LastGenOutput>CustomerModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Customer_DetModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Customer_DetModel.edmx</DependentUpon>
+      <LastGenOutput>Customer_DetModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Customer_DetModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Customer_DetModel.edmx</DependentUpon>
+      <LastGenOutput>Customer_DetModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="OrderModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>OrderModel.edmx</DependentUpon>
+      <LastGenOutput>OrderModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="OrderModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>OrderModel.edmx</DependentUpon>
+      <LastGenOutput>OrderModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
