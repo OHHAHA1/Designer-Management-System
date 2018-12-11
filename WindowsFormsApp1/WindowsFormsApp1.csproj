@@ -58,6 +58,12 @@
     <Compile Include="DesignerSubViews\Current Job Details.Designer.cs">
       <DependentUpon>Current Job Details.cs</DependentUpon>
     </Compile>
+    <Compile Include="DesignerSubViews\EditProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DesignerSubViews\EditProfile.Designer.cs">
+      <DependentUpon>EditProfile.cs</DependentUpon>
+    </Compile>
     <Compile Include="DesignerSubViews\Submit Design.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,6 +88,12 @@
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="invoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="invoice.Designer.cs">
+      <DependentUpon>invoice.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\Database.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -90,6 +102,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DesignerSubViews\Current Job Details.resx">
       <DependentUpon>Current Job Details.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DesignerSubViews\EditProfile.resx">
+      <DependentUpon>EditProfile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DesignerSubViews\Submit Design.resx">
       <DependentUpon>Submit Design.cs</DependentUpon>
@@ -102,6 +117,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmManager.resx">
       <DependentUpon>frmManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="invoice.resx">
+      <DependentUpon>invoice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -9,16 +9,18 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using WindowsFormsApp1.Model;
 using WindowsFormsApp1.DesignerSubViews;
+using System.IO;
 
 
 
 namespace WindowsFormsApp1
 {
-    
+   
     public partial class frmDesigner : Form
     {
         int selectedRow;
         string username;
+        string systermPath = @"D:\C#";
         public frmDesigner(string username)
         {
             InitializeComponent();
@@ -49,7 +51,8 @@ namespace WindowsFormsApp1
 
         private void button4_Click(object sender, EventArgs e)
         {
-
+            CurrentJobDetails details = new CurrentJobDetails(txtOrderNum.Text);
+            details.Show();
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -77,6 +80,10 @@ namespace WindowsFormsApp1
             dataGridJobRequest.DataSource = Database.populateJobRequest(lblUsername.Text);
             populateRevisionRequest();
             rtxtMessages.Text = Database.getRecentMessage(username);
+
+            string imagePath = Path.Combine(Path.Combine(systermPath, "userpic"),username+".jpg");
+            
+            picUser.Image = new Bitmap(imagePath);
 
 
         }
@@ -130,6 +137,15 @@ namespace WindowsFormsApp1
         {
             frmSubmitDesign submit = new frmSubmitDesign(txtOrderNum.Text,txtDesignType.Text);
             submit.Show();
+        }
+
+        private void frmDesigner_Resize(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Minimized)
+            {
+                Hide();
+                notifyIcon1.Visible = true;
+            }
         }
     }
 }

@@ -29,16 +29,16 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtOrderID = new System.Windows.Forms.TextBox();
+            this.txtCustomerName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtProductType = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.txtDescription = new System.Windows.Forms.RichTextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtCustomerID = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnOkay = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -51,21 +51,21 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Order ID";
             // 
-            // textBox1
+            // txtOrderID
             // 
-            this.textBox1.Location = new System.Drawing.Point(115, 15);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(164, 20);
-            this.textBox1.TabIndex = 1;
+            this.txtOrderID.Location = new System.Drawing.Point(115, 15);
+            this.txtOrderID.Name = "txtOrderID";
+            this.txtOrderID.ReadOnly = true;
+            this.txtOrderID.Size = new System.Drawing.Size(164, 20);
+            this.txtOrderID.TabIndex = 1;
             // 
-            // textBox2
+            // txtCustomerName
             // 
-            this.textBox2.Location = new System.Drawing.Point(115, 109);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(164, 20);
-            this.textBox2.TabIndex = 3;
+            this.txtCustomerName.Location = new System.Drawing.Point(115, 109);
+            this.txtCustomerName.Name = "txtCustomerName";
+            this.txtCustomerName.ReadOnly = true;
+            this.txtCustomerName.Size = new System.Drawing.Size(164, 20);
+            this.txtCustomerName.TabIndex = 3;
             // 
             // label2
             // 
@@ -76,14 +76,14 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Customer Name";
             // 
-            // textBox3
+            // txtProductType
             // 
-            this.textBox3.Location = new System.Drawing.Point(115, 45);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(164, 20);
-            this.textBox3.TabIndex = 5;
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            this.txtProductType.Location = new System.Drawing.Point(115, 45);
+            this.txtProductType.Name = "txtProductType";
+            this.txtProductType.ReadOnly = true;
+            this.txtProductType.Size = new System.Drawing.Size(164, 20);
+            this.txtProductType.TabIndex = 5;
+            this.txtProductType.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // label3
             // 
@@ -95,15 +95,15 @@
             this.label3.Text = "Product Type";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
-            // richTextBox1
+            // txtDescription
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(30, 175);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.richTextBox1.Size = new System.Drawing.Size(249, 140);
-            this.richTextBox1.TabIndex = 6;
-            this.richTextBox1.Text = "";
+            this.txtDescription.Location = new System.Drawing.Point(30, 175);
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.ReadOnly = true;
+            this.txtDescription.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.txtDescription.Size = new System.Drawing.Size(249, 140);
+            this.txtDescription.TabIndex = 6;
+            this.txtDescription.Text = "";
             // 
             // label4
             // 
@@ -114,13 +114,13 @@
             this.label4.TabIndex = 7;
             this.label4.Text = "Description";
             // 
-            // textBox4
+            // txtCustomerID
             // 
-            this.textBox4.Location = new System.Drawing.Point(115, 83);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(164, 20);
-            this.textBox4.TabIndex = 9;
+            this.txtCustomerID.Location = new System.Drawing.Point(115, 83);
+            this.txtCustomerID.Name = "txtCustomerID";
+            this.txtCustomerID.ReadOnly = true;
+            this.txtCustomerID.Size = new System.Drawing.Size(164, 20);
+            this.txtCustomerID.TabIndex = 9;
             // 
             // label5
             // 
@@ -131,14 +131,15 @@
             this.label5.TabIndex = 8;
             this.label5.Text = "Customer ID";
             // 
-            // button1
+            // btnOkay
             // 
-            this.button1.Location = new System.Drawing.Point(204, 339);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "OK";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnOkay.Location = new System.Drawing.Point(204, 339);
+            this.btnOkay.Name = "btnOkay";
+            this.btnOkay.Size = new System.Drawing.Size(75, 23);
+            this.btnOkay.TabIndex = 10;
+            this.btnOkay.Text = "OK";
+            this.btnOkay.UseVisualStyleBackColor = true;
+            this.btnOkay.Click += new System.EventHandler(this.btnOkay_Click);
             // 
             // button2
             // 
@@ -155,19 +156,19 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(310, 377);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.btnOkay);
+            this.Controls.Add(this.txtCustomerID);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtDescription);
+            this.Controls.Add(this.txtProductType);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtCustomerName);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtOrderID);
             this.Controls.Add(this.label1);
             this.Name = "CurrentJobDetails";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Current Job Details";
             this.Load += new System.EventHandler(this.CurrentJobDetails_Load);
             this.ResumeLayout(false);
@@ -178,16 +179,16 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtOrderID;
+        private System.Windows.Forms.TextBox txtCustomerName;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtProductType;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox txtDescription;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtCustomerID;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnOkay;
         private System.Windows.Forms.Button button2;
     }
 }

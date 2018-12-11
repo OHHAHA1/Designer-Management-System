@@ -30,7 +30,88 @@ namespace WindowsFormsApp1.Model
             }
                     
     }
+        public static Decimal total = 0;
 
+        internal static object populateOrders(string cust_id)
+        {
+            DataTable table = new DataTable();
+            table.Columns.Add("Order ID", typeof(int));
+            table.Columns.Add("Product Type", typeof(string));
+            table.Columns.Add("Price", typeof(Decimal));
+
+            string query = "SELECT order_id,product_type,price FROM ORDERS WHERE cust_id = '"+cust_id +"'";
+            SqlConnection conn = connectDB();
+            if (conn != null)
+            {
+                SqlCommand cmd = new SqlCommand(query, conn);
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                  table.Rows.Add(reader.GetInt32(0), reader.GetString(1), reader.GetDecimal(2));
+                    total += reader.GetDecimal(2);
+                }
+
+            }
+            //retervie data from database
+            return table;
+        }
+
+        internal static string getDescription(string order_id)
+        {
+            string query = "SELECT description FROM ORDERS WHERE order_id= '" + order_id + "'";
+            SqlConnection conn = connectDB();
+            if (conn != null)
+            {
+                SqlCommand cmd = new SqlCommand(query, conn);
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    string des = reader.GetString(0);
+                    return des;
+                }
+
+            }
+            //retervie data from database
+            return "N/A";
+        }
+
+        internal static string getCustomerName(string customerID)
+        {
+            string query = "SELECT f_name,l_name FROM CUSTOMERS WHERE cust_id= '" + customerID + "'";
+            SqlConnection conn = connectDB();
+            if (conn != null)
+            {
+                SqlCommand cmd = new SqlCommand(query, conn);
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    string customerName = reader.GetString(0) +" " + reader.GetString(1);
+                    return customerName;
+                }
+
+            }
+            //retervie data from database
+            return "N/A";
+        }
+
+        internal static string getCustomerID(string order_id)
+        {
+            string query = "SELECT cust_id FROM ORDERS WHERE order_id= '" + order_id + "'";
+            SqlConnection conn = connectDB();
+            if (conn != null)
+            {
+                SqlCommand cmd = new SqlCommand(query, conn);
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    string cust_id = reader.GetInt32(0).ToString();
+                    return cust_id;
+                }
+
+            }
+            //retervie data from database
+            return "N/A";
+        }
 
         public static DataTable populateJobRequest(String username)
         {
@@ -75,7 +156,26 @@ namespace WindowsFormsApp1.Model
             //retervie data from database
             return "N/A";
         }
-        
+
+        public static string getProductType(string orderID)
+        {
+            string query = "SELECT product_type FROM ORDERS WHERE order_id= '" + orderID + "'";
+            SqlConnection conn = connectDB();
+            if (conn != null)
+            {
+                SqlCommand cmd = new SqlCommand(query, conn);
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    string product_type = reader.GetString(0);
+                    return product_type;
+                }
+
+            }
+            //retervie data from database
+            return "N/A";
+        }
+
         public  static bool checkLogin(string username, string password)
         {
             //retervie data from database

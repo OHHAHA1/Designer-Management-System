@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.Sidebar = new System.Windows.Forms.FlowLayoutPanel();
             this.rtxtMessages = new System.Windows.Forms.RichTextBox();
             this.btnMessages = new System.Windows.Forms.Button();
@@ -46,15 +47,16 @@
             this.btnAcceptRevision = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnEditAccount = new System.Windows.Forms.Button();
+            this.picUser = new System.Windows.Forms.PictureBox();
             this.dataGridJobRequest = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
             this.dataGridRevision = new System.Windows.Forms.DataGridView();
-            this.picUser = new System.Windows.Forms.PictureBox();
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.Sidebar.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picUser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridJobRequest)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridRevision)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picUser)).BeginInit();
             this.SuspendLayout();
             // 
             // Sidebar
@@ -154,15 +156,16 @@
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(129, 29);
+            this.lblName.Location = new System.Drawing.Point(146, 29);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(111, 13);
             this.lblName.TabIndex = 16;
             this.lblName.Text = "First Name Last Name";
+            this.lblName.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // btnLogout
             // 
-            this.btnLogout.Location = new System.Drawing.Point(141, 99);
+            this.btnLogout.Location = new System.Drawing.Point(158, 99);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(95, 23);
             this.btnLogout.TabIndex = 17;
@@ -173,7 +176,7 @@
             // lblUsername
             // 
             this.lblUsername.AutoSize = true;
-            this.lblUsername.Location = new System.Drawing.Point(187, 42);
+            this.lblUsername.Location = new System.Drawing.Point(204, 42);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(53, 13);
             this.lblUsername.TabIndex = 18;
@@ -218,7 +221,7 @@
             this.groupBox1.Controls.Add(this.btnLogout);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(254, 172);
+            this.groupBox1.Size = new System.Drawing.Size(263, 172);
             this.groupBox1.TabIndex = 20;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "User Details";
@@ -226,12 +229,21 @@
             // 
             // btnEditAccount
             // 
-            this.btnEditAccount.Location = new System.Drawing.Point(141, 128);
+            this.btnEditAccount.Location = new System.Drawing.Point(158, 128);
             this.btnEditAccount.Name = "btnEditAccount";
             this.btnEditAccount.Size = new System.Drawing.Size(95, 23);
             this.btnEditAccount.TabIndex = 19;
             this.btnEditAccount.Text = "Edit Account";
             this.btnEditAccount.UseVisualStyleBackColor = true;
+            // 
+            // picUser
+            // 
+            this.picUser.Location = new System.Drawing.Point(6, 19);
+            this.picUser.Name = "picUser";
+            this.picUser.Size = new System.Drawing.Size(134, 132);
+            this.picUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picUser.TabIndex = 15;
+            this.picUser.TabStop = false;
             // 
             // dataGridJobRequest
             // 
@@ -264,13 +276,10 @@
             this.dataGridRevision.TabIndex = 23;
             this.dataGridRevision.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
-            // picUser
+            // notifyIcon1
             // 
-            this.picUser.Location = new System.Drawing.Point(6, 19);
-            this.picUser.Name = "picUser";
-            this.picUser.Size = new System.Drawing.Size(117, 132);
-            this.picUser.TabIndex = 15;
-            this.picUser.TabStop = false;
+            this.notifyIcon1.Text = "notifyIcon1";
+            this.notifyIcon1.Visible = true;
             // 
             // frmDesigner
             // 
@@ -295,12 +304,13 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Desinger";
             this.Load += new System.EventHandler(this.frmDesigner_Load);
+            this.Resize += new System.EventHandler(this.frmDesigner_Resize);
             this.Sidebar.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picUser)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridJobRequest)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridRevision)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picUser)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -329,5 +339,6 @@
         private System.Windows.Forms.DataGridView dataGridJobRequest;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView dataGridRevision;
+        private System.Windows.Forms.NotifyIcon notifyIcon1;
     }
 }
