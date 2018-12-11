@@ -239,26 +239,7 @@ namespace WindowsFormsApp1.Model
 
         }
 
-        public static string getRecentMessage(string to_username)
-        {
-          
-
-            SqlConnection conn = connectDB();
-            string query = "SELECT TOP 1 from_user,Message FROM MESSAGES WHERE to_user = '"+to_username+"' ORDER BY time DESC";
-            if (conn != null)
-            {
-                SqlCommand cmd = new SqlCommand(query, conn);
-                SqlDataReader reader = cmd.ExecuteReader();
-                if (reader.Read())
-                {
-                    string message = reader.GetString(0) + " : " + reader.GetString(1);
-                    return message;
-                }
-
-            }
-            return null;
-        }
-
+       
 
 
     }

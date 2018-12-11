@@ -14,9 +14,9 @@ namespace WindowsFormsApp1
 {
     public partial class frmChatInterface : Form
     {
-        SqlConnection conn = new SqlConnection("Data Source=KUMA;Initial Catalog=chat;Integrated Security=True");
+        SqlConnection conn; //new SqlConnection("Data Source=KUMA;Initial Catalog=chat;Integrated Security=True");
         SqlDataReader reader = null;
-        String chat_id;
+     String chat_id;
         SqlCommand command;
         String user =null;
 
@@ -28,10 +28,10 @@ namespace WindowsFormsApp1
 
         private void frmChatInterface_Load(object sender, EventArgs e)
         {
-            conn = Database.connectDB();
+                conn = Database.connectDB();
             // Need to change the query
             // Get all the users except PRIMARY USER (Logged user)
-            command = new SqlCommand("SELECT DISTINCT from_user FROM messages WHERE from_user != '" + user +"'", conn);
+            command = new SqlCommand("SELECT DISTINCT username FROM USERS WHERE username != '" + user +"'", conn);
 
             reader = command.ExecuteReader();
 
@@ -76,7 +76,7 @@ namespace WindowsFormsApp1
                 try
                 {
                     conn.Open();
-                    command = new SqlCommand("SELECT from_user, msg FROM messages WHERE chat_id = '" + chat_id + "'", conn);
+                    command = new SqlCommand("SELECT from_user, message FROM messages WHERE chat_id = '" + chat_id + "'", conn);
                     reader = command.ExecuteReader();
 
                     while (reader.Read())
@@ -108,7 +108,8 @@ namespace WindowsFormsApp1
                     txtMsg.Clear();
                 } catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+
+                    MessageBox.Show(ex.StackTrace);
                 } finally
                 {
                     conn.Close();
@@ -139,7 +140,7 @@ namespace WindowsFormsApp1
             try
             {
                 conn.Open();
-                command = new SqlCommand("SELECT from_user, msg FROM messages WHERE chat_id = '" + chat_id + "'", conn);
+                command = new SqlCommand("SELECT from_user, message FROM messages WHERE chat_id = '" + chat_id + "'", conn);
                 reader = command.ExecuteReader();
 
                 while (reader.Read())
