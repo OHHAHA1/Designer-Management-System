@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using WindowsFormsApp1.Model;
 
 namespace WindowsFormsApp1
 {
@@ -19,17 +20,18 @@ namespace WindowsFormsApp1
         SqlCommand command;
         String user = "Shehan";
 
-        public frmChatInterface()
+        public frmChatInterface( String username)
         {
             InitializeComponent();
+            user = username;
         }
 
         private void frmChatInterface_Load(object sender, EventArgs e)
         {
-            conn.Open();
+            conn = Database.connectDB();
             // Need to change the query
             // Get all the users except PRIMARY USER (Logged user)
-            command = new SqlCommand("SELECT DISTINCT from_user FROM messages WHERE from_user != '" + user +"'", conn);
+            command = new SqlCommand("SELECT DISTINCT f_name FROM USERS WHERE username != '" + user +"'", conn);
 
             reader = command.ExecuteReader();
 
@@ -74,7 +76,7 @@ namespace WindowsFormsApp1
                 try
                 {
                     conn.Open();
-                    command = new SqlCommand("SELECT from_user, msg FROM messages WHERE chat_id = '" + chat_id + "'", conn);
+                    command = new SqlCommand("SELECT from_user, message FROM messages WHERE chat_id = '" + chat_id + "'", conn);
                     reader = command.ExecuteReader();
 
                     while (reader.Read())
@@ -137,7 +139,7 @@ namespace WindowsFormsApp1
             try
             {
                 conn.Open();
-                command = new SqlCommand("SELECT from_user, msg FROM messages WHERE chat_id = '" + chat_id + "'", conn);
+                command = new SqlCommand("SELECT from_user, message FROM messages WHERE chat_id = '" + chat_id + "'", conn);
                 reader = command.ExecuteReader();
 
                 while (reader.Read())

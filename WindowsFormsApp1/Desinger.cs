@@ -79,7 +79,7 @@ namespace WindowsFormsApp1
         {
             dataGridJobRequest.DataSource = Database.populateJobRequest(lblUsername.Text);
             populateRevisionRequest();
-            rtxtMessages.Text = Database.getRecentMessage(username);
+           
 
             string imagePath = Path.Combine(Path.Combine(systermPath, "userpic"),username+".jpg");
             
@@ -145,8 +145,15 @@ namespace WindowsFormsApp1
             if (this.WindowState == FormWindowState.Minimized)
             {
                 Hide();
-                notifyIcon1.Visible = true;
+               // notifyIcon1.Visible = true;
             }
+
+        }
+
+        private void btnMessages_Click(object sender, EventArgs e)
+        {
+            frmChatInterface chat = new frmChatInterface(lblUsername.Text);
+            chat.Show();
 
         }
     }
