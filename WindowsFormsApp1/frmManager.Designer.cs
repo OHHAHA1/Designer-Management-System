@@ -43,40 +43,30 @@
             this.desinerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.lblLogName = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblUsername = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.OrderNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CustomerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.product = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Designer = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.CustID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CustName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RecentOrder = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridOrder = new System.Windows.Forms.DataGridView();
+            this.dataGridViewCustomer = new System.Windows.Forms.DataGridView();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.refresh = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.btnMessages = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.button7 = new System.Windows.Forms.Button();
+            this.btnAssign = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.flowLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridOrder)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCustomer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -88,7 +78,7 @@
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1351, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(893, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -194,21 +184,11 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(190, 260);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::WindowsFormsApp1.Properties.Resources._35400607_1287156498083897_4298805785581846528_o;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(187, 170);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // flowLayoutPanel2
             // 
             this.flowLayoutPanel2.Controls.Add(this.lblLogName);
             this.flowLayoutPanel2.Controls.Add(this.label2);
-            this.flowLayoutPanel2.Controls.Add(this.label1);
+            this.flowLayoutPanel2.Controls.Add(this.lblUsername);
             this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 179);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
@@ -235,20 +215,20 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Manager";
             // 
-            // label1
+            // lblUsername
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 36);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 16);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "ID:010101";
-            this.label1.Click += new System.EventHandler(this.label1_Click_1);
+            this.lblUsername.AutoSize = true;
+            this.lblUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsername.Location = new System.Drawing.Point(3, 36);
+            this.lblUsername.Name = "lblUsername";
+            this.lblUsername.Size = new System.Drawing.Size(66, 16);
+            this.lblUsername.TabIndex = 3;
+            this.lblUsername.Text = "ID:010101";
+            this.lblUsername.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(878, 30);
+            this.button1.Location = new System.Drawing.Point(29, 310);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(118, 40);
             this.button1.TabIndex = 2;
@@ -258,7 +238,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(878, 385);
+            this.button2.Location = new System.Drawing.Point(328, 493);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(118, 40);
             this.button2.TabIndex = 3;
@@ -266,91 +246,37 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // dataGridView1
+            // dataGridOrder
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.OrderNo,
-            this.CustomerName,
-            this.product,
-            this.Status,
-            this.Designer});
-            this.dataGridView1.Location = new System.Drawing.Point(210, 30);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(662, 311);
-            this.dataGridView1.TabIndex = 4;
+            this.dataGridOrder.AllowUserToAddRows = false;
+            this.dataGridOrder.AllowUserToDeleteRows = false;
+            this.dataGridOrder.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridOrder.Location = new System.Drawing.Point(210, 68);
+            this.dataGridOrder.Name = "dataGridOrder";
+            this.dataGridOrder.ReadOnly = true;
+            this.dataGridOrder.Size = new System.Drawing.Size(662, 158);
+            this.dataGridOrder.TabIndex = 4;
             // 
-            // OrderNo
+            // dataGridViewCustomer
             // 
-            this.OrderNo.HeaderText = "OrderNo";
-            this.OrderNo.Name = "OrderNo";
-            this.OrderNo.ReadOnly = true;
-            // 
-            // CustomerName
-            // 
-            this.CustomerName.HeaderText = "Customer Name";
-            this.CustomerName.Name = "CustomerName";
-            this.CustomerName.ReadOnly = true;
-            // 
-            // product
-            // 
-            this.product.HeaderText = "Product";
-            this.product.Name = "product";
-            this.product.ReadOnly = true;
-            // 
-            // Status
-            // 
-            this.Status.HeaderText = "Status";
-            this.Status.Name = "Status";
-            this.Status.ReadOnly = true;
-            // 
-            // Designer
-            // 
-            this.Designer.HeaderText = "Designer";
-            this.Designer.Name = "Designer";
-            this.Designer.ReadOnly = true;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.CustID,
-            this.CustName,
-            this.RecentOrder});
-            this.dataGridView2.Location = new System.Drawing.Point(210, 385);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.Size = new System.Drawing.Size(662, 264);
-            this.dataGridView2.TabIndex = 5;
-            // 
-            // CustID
-            // 
-            this.CustID.HeaderText = "CustomerID";
-            this.CustID.Name = "CustID";
-            this.CustID.ReadOnly = true;
-            // 
-            // CustName
-            // 
-            this.CustName.HeaderText = "Customer Name";
-            this.CustName.Name = "CustName";
-            this.CustName.ReadOnly = true;
-            // 
-            // RecentOrder
-            // 
-            this.RecentOrder.HeaderText = "Recent Order";
-            this.RecentOrder.Name = "RecentOrder";
-            this.RecentOrder.ReadOnly = true;
+            this.dataGridViewCustomer.AllowUserToAddRows = false;
+            this.dataGridViewCustomer.AllowUserToDeleteRows = false;
+            this.dataGridViewCustomer.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridViewCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewCustomer.Location = new System.Drawing.Point(210, 275);
+            this.dataGridViewCustomer.Name = "dataGridViewCustomer";
+            this.dataGridViewCustomer.ReadOnly = true;
+            this.dataGridViewCustomer.Size = new System.Drawing.Size(662, 191);
+            this.dataGridViewCustomer.TabIndex = 5;
+            this.dataGridViewCustomer.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCustomer_CellClick);
+            this.dataGridViewCustomer.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCustomer_CellContentClick);
+            this.dataGridViewCustomer.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCustomer_CellContentDoubleClick);
+            this.dataGridViewCustomer.Click += new System.EventHandler(this.dataGridViewCustomer_Click);
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(878, 76);
+            this.button3.Location = new System.Drawing.Point(29, 356);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(118, 40);
             this.button3.TabIndex = 6;
@@ -359,118 +285,108 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(878, 431);
+            this.button4.Location = new System.Drawing.Point(192, 493);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(118, 40);
             this.button4.TabIndex = 7;
             this.button4.Text = "View Customer";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // button5
+            // refresh
             // 
-            this.button5.Location = new System.Drawing.Point(878, 609);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(118, 40);
-            this.button5.TabIndex = 8;
-            this.button5.Text = "Delete Customer";
-            this.button5.UseVisualStyleBackColor = true;
+            this.refresh.Location = new System.Drawing.Point(461, 493);
+            this.refresh.Name = "refresh";
+            this.refresh.Size = new System.Drawing.Size(118, 40);
+            this.refresh.TabIndex = 8;
+            this.refresh.Text = "Refresh";
+            this.refresh.UseVisualStyleBackColor = true;
+            this.refresh.Click += new System.EventHandler(this.button5_Click);
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(878, 301);
+            this.button6.Location = new System.Drawing.Point(29, 402);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(118, 40);
             this.button6.TabIndex = 9;
             this.button6.Text = "Remove Order";
             this.button6.UseVisualStyleBackColor = true;
             // 
-            // richTextBox1
+            // btnMessages
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(1046, 108);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(293, 159);
-            this.richTextBox1.TabIndex = 10;
-            this.richTextBox1.Text = "";
+            this.btnMessages.Location = new System.Drawing.Point(609, 493);
+            this.btnMessages.Name = "btnMessages";
+            this.btnMessages.Size = new System.Drawing.Size(118, 40);
+            this.btnMessages.TabIndex = 16;
+            this.btnMessages.Text = "Messages";
+            this.btnMessages.UseVisualStyleBackColor = true;
+            this.btnMessages.Click += new System.EventHandler(this.btnMessages_Click);
             // 
-            // comboBox1
+            // label1
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(1046, 76);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(293, 21);
-            this.comboBox1.TabIndex = 11;
-            this.comboBox1.Text = "Select Reciever";
-            // 
-            // button8
-            // 
-            this.button8.Location = new System.Drawing.Point(1183, 273);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(75, 27);
-            this.button8.TabIndex = 13;
-            this.button8.Text = "Clear";
-            this.button8.UseVisualStyleBackColor = true;
-            // 
-            // button10
-            // 
-            this.button10.Location = new System.Drawing.Point(1264, 655);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(75, 27);
-            this.button10.TabIndex = 15;
-            this.button10.Text = "Clear";
-            this.button10.UseVisualStyleBackColor = true;
-            // 
-            // richTextBox2
-            // 
-            this.richTextBox2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.richTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.richTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox2.Location = new System.Drawing.Point(1046, 369);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.ReadOnly = true;
-            this.richTextBox2.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.richTextBox2.Size = new System.Drawing.Size(293, 280);
-            this.richTextBox2.TabIndex = 14;
-            this.richTextBox2.Text = "your messages will be displayed here";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(510, 42);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(38, 13);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Orders";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(1042, 344);
+            this.label3.Location = new System.Drawing.Point(510, 250);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(154, 24);
-            this.label3.TabIndex = 16;
-            this.label3.Text = "Your Messages";
+            this.label3.Size = new System.Drawing.Size(56, 13);
+            this.label3.TabIndex = 18;
+            this.label3.Text = "Customers";
             // 
-            // label4
+            // button7
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(1042, 48);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(149, 24);
-            this.label4.TabIndex = 17;
-            this.label4.Text = "Send Message";
+            this.button7.Location = new System.Drawing.Point(754, 493);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(118, 40);
+            this.button7.TabIndex = 19;
+            this.button7.Text = "Invoice";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // btnAssign
+            // 
+            this.btnAssign.Location = new System.Drawing.Point(29, 493);
+            this.btnAssign.Name = "btnAssign";
+            this.btnAssign.Size = new System.Drawing.Size(118, 40);
+            this.btnAssign.TabIndex = 20;
+            this.btnAssign.Text = "Assign Designer";
+            this.btnAssign.UseVisualStyleBackColor = true;
+            this.btnAssign.Click += new System.EventHandler(this.btnAssign_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::WindowsFormsApp1.Properties.Resources.Vecteezy_17_8300_06__Converted__01;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(187, 170);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // frmManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1351, 749);
-            this.Controls.Add(this.label4);
+            this.ClientSize = new System.Drawing.Size(893, 567);
+            this.Controls.Add(this.btnAssign);
+            this.Controls.Add(this.button7);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.button10);
-            this.Controls.Add(this.richTextBox2);
-            this.Controls.Add(this.button8);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnMessages);
             this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.refresh);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.dataGridView2);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridViewCustomer);
+            this.Controls.Add(this.dataGridOrder);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.flowLayoutPanel1);
@@ -478,17 +394,17 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmManager";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Username(Manager)";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Text = "Manager";
             this.Load += new System.EventHandler(this.frmManager_Load);
+            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.frmManager_MouseClick);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.flowLayoutPanel2.ResumeLayout(false);
             this.flowLayoutPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridOrder)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCustomer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -514,30 +430,20 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.Label lblLogName;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblUsername;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn OrderNo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CustomerName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn product;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Status;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CustID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CustName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn RecentOrder;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Designer;
+        private System.Windows.Forms.DataGridView dataGridOrder;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button refresh;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.Button btnMessages;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        public System.Windows.Forms.DataGridView dataGridViewCustomer;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button btnAssign;
     }
 }

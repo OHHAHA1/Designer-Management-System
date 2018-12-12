@@ -156,5 +156,18 @@ namespace WindowsFormsApp1
             chat.Show();
 
         }
+
+        private void btnAcceptRevision_Click(object sender, EventArgs e)
+        {
+            DialogResult logout = MessageBox.Show("Do you Want to Accept Revision" + "", "Revision", MessageBoxButtons.YesNo);
+            if (logout == DialogResult.Yes)
+            {
+                //set to accepted order
+                DataGridViewRow row = dataGridJobRequest.Rows[selectedRow];
+                txtOrderNum.Text = row.Cells[0].Value.ToString();
+                txtDesignType.Text = row.Cells[1].Value.ToString();
+
+            }
+        }
     }
 }

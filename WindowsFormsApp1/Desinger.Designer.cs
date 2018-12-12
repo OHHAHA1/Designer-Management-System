@@ -42,15 +42,15 @@
             this.btnAcceptRevision = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnEditAccount = new System.Windows.Forms.Button();
-            this.picUser = new System.Windows.Forms.PictureBox();
             this.dataGridJobRequest = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
             this.dataGridRevision = new System.Windows.Forms.DataGridView();
             this.btnMessages = new System.Windows.Forms.Button();
+            this.picUser = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picUser)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridJobRequest)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridRevision)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picUser)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSubmitDesign
@@ -98,7 +98,7 @@
             // txtDesignType
             // 
             this.txtDesignType.Location = new System.Drawing.Point(459, 53);
-            this.txtDesignType.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDesignType.Margin = new System.Windows.Forms.Padding(2);
             this.txtDesignType.Name = "txtDesignType";
             this.txtDesignType.ReadOnly = true;
             this.txtDesignType.Size = new System.Drawing.Size(178, 20);
@@ -107,7 +107,7 @@
             // txtOrderNum
             // 
             this.txtOrderNum.Location = new System.Drawing.Point(459, 84);
-            this.txtOrderNum.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtOrderNum.Margin = new System.Windows.Forms.Padding(2);
             this.txtOrderNum.Name = "txtOrderNum";
             this.txtOrderNum.ReadOnly = true;
             this.txtOrderNum.Size = new System.Drawing.Size(178, 20);
@@ -127,7 +127,7 @@
             // btnLogout
             // 
             this.btnLogout.Location = new System.Drawing.Point(172, 109);
-            this.btnLogout.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLogout.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(95, 23);
             this.btnLogout.TabIndex = 17;
@@ -174,6 +174,7 @@
             this.btnAcceptRevision.TabIndex = 7;
             this.btnAcceptRevision.Text = "Accept Revision";
             this.btnAcceptRevision.UseVisualStyleBackColor = true;
+            this.btnAcceptRevision.Click += new System.EventHandler(this.btnAcceptRevision_Click);
             // 
             // groupBox1
             // 
@@ -184,7 +185,7 @@
             this.groupBox1.Controls.Add(this.btnLogout);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(284, 172);
             this.groupBox1.TabIndex = 20;
             this.groupBox1.TabStop = false;
@@ -194,22 +195,12 @@
             // btnEditAccount
             // 
             this.btnEditAccount.Location = new System.Drawing.Point(172, 136);
-            this.btnEditAccount.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEditAccount.Margin = new System.Windows.Forms.Padding(2);
             this.btnEditAccount.Name = "btnEditAccount";
             this.btnEditAccount.Size = new System.Drawing.Size(95, 23);
             this.btnEditAccount.TabIndex = 19;
             this.btnEditAccount.Text = "Edit Account";
             this.btnEditAccount.UseVisualStyleBackColor = true;
-            // 
-            // picUser
-            // 
-            this.picUser.Location = new System.Drawing.Point(4, 15);
-            this.picUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.picUser.Name = "picUser";
-            this.picUser.Size = new System.Drawing.Size(154, 153);
-            this.picUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picUser.TabIndex = 15;
-            this.picUser.TabStop = false;
             // 
             // dataGridJobRequest
             // 
@@ -217,7 +208,7 @@
             this.dataGridJobRequest.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridJobRequest.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridJobRequest.Location = new System.Drawing.Point(10, 263);
-            this.dataGridJobRequest.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridJobRequest.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridJobRequest.Name = "dataGridJobRequest";
             this.dataGridJobRequest.Size = new System.Drawing.Size(294, 156);
             this.dataGridJobRequest.TabIndex = 21;
@@ -238,7 +229,7 @@
             this.dataGridRevision.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridRevision.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridRevision.Location = new System.Drawing.Point(347, 263);
-            this.dataGridRevision.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridRevision.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridRevision.Name = "dataGridRevision";
             this.dataGridRevision.Size = new System.Drawing.Size(290, 156);
             this.dataGridRevision.TabIndex = 23;
@@ -253,6 +244,16 @@
             this.btnMessages.Text = "Messages";
             this.btnMessages.UseVisualStyleBackColor = true;
             this.btnMessages.Click += new System.EventHandler(this.btnMessages_Click);
+            // 
+            // picUser
+            // 
+            this.picUser.Location = new System.Drawing.Point(4, 15);
+            this.picUser.Margin = new System.Windows.Forms.Padding(2);
+            this.picUser.Name = "picUser";
+            this.picUser.Size = new System.Drawing.Size(154, 153);
+            this.picUser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picUser.TabIndex = 15;
+            this.picUser.TabStop = false;
             // 
             // frmDesigner
             // 
@@ -280,9 +281,9 @@
             this.Resize += new System.EventHandler(this.frmDesigner_Resize);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picUser)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridJobRequest)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridRevision)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picUser)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

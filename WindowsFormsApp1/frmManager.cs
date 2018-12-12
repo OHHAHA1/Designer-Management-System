@@ -7,14 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1.Model;
 
 namespace WindowsFormsApp1
 {
     public partial class frmManager : Form
     {
-        public frmManager()
+        int selectedRow;
+        public frmManager(string username)
         {
             InitializeComponent();
+            lblUsername.Text =  username;
+            lblLogName.Text = Database.getName(username);
             
         }
 
@@ -35,7 +39,8 @@ namespace WindowsFormsApp1
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            AddCust addcust = new AddCust();
+            addcust.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -50,8 +55,63 @@ namespace WindowsFormsApp1
 
         private void frmManager_Load(object sender, EventArgs e)
         {
-            
+            dataGridOrder.DataSource = Database.populateOrders();
+            dataGridViewCustomer.DataSource = Database.populateCustomers();
         }
-       
+
+        private void btnMessages_Click(object sender, EventArgs e)
+        {
+            frmChatInterface chat = new frmChatInterface(lblUsername.Text);
+            chat.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow row = dataGridViewCustomer.Rows[selectedRow];
+            frmCustomer_Details chat = new frmCustomer_Details((int)(row.Cells[0].Value));
+            chat.Show();
+        }
+
+        private void dataGridViewCustomer_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+           
+        }
+
+        private void dataGridViewCustomer_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+           // selectedRow = e.RowIndex;
+        }
+
+        private void dataGridViewCustomer_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            selectedRow = e.RowIndex;
+        }
+
+        private void dataGridViewCustomer_Click(object sender, EventArgs e)
+        {
+            //dataGridViewCustomer.DataSource = Database.populateCustomers();
+        }
+
+        private void frmManager_MouseClick(object sender, MouseEventArgs e)
+        {
+         // 
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow row = dataGridViewCustomer.Rows[selectedRow];
+            invoice invoice = new invoice(row.Cells["Customer ID"].Value.ToString());
+            invoice.Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            dataGridViewCustomer.DataSource = Database.populateCustomers();
+        }
+
+        private void btnAssign_Click(object sender, EventArgs e)
+        {
+            frmAssign ass = new frmAssign();
+        }
     }
 }

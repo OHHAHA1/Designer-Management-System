@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using WindowsFormsApp1;
 using System.Data.SqlClient;
 using System.Data;
+using System.Windows.Forms;
 
 namespace WindowsFormsApp1.Model
 {
@@ -30,6 +31,24 @@ namespace WindowsFormsApp1.Model
             }
                     
     }
+
+        internal static void assgin(string order_id , string designer)
+        {
+            string query = "INSERT INTO ASSIGNED_ORDERS (order_id,desginer) VALUES ('"+order_id+"','"+designer+"')";
+            SqlConnection conn = connectDB();
+            if (conn != null)
+            {
+                SqlCommand cmd = new SqlCommand(query, conn);
+                SqlDataAdapter sad = new SqlDataAdapter(query, conn);
+                sad.SelectCommand.ExecuteNonQuery();
+
+            }
+            conn.Close();
+            //retervie data from database
+        }
+
+       
+
         public static Decimal total = 0;
 
         internal static object populateOrders(string cust_id)
@@ -55,6 +74,65 @@ namespace WindowsFormsApp1.Model
             //retervie data from database
             return table;
         }
+
+        internal static object populateCustomers()
+        {
+            DataTable table = new DataTable();
+            table.Columns.Add("Custormer ID", typeof(int));
+            table.Columns.Add("First Name", typeof(string));
+            table.Columns.Add("Last Name", typeof(string));
+            table.Columns.Add("Contact", typeof(string));
+       
+
+            string query = "SELECT cust_id,f_name,l_name,mobile_no FROM CUSTOMERS";
+            SqlConnection conn = connectDB();
+            if (conn != null)
+            {
+                SqlCommand cmd = new SqlCommand(query, conn);
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    table.Rows.Add(reader.GetInt32(0), reader.GetString(1), reader.GetString(2), reader.GetString(3));
+
+                }
+
+            }
+            //retervie data from database
+            return table;
+        }
+
+        internal static DataTable populateOrders()
+        {
+            DataTable table = new DataTable();
+            table.Columns.Add("Order ID", typeof(int));
+            table.Columns.Add("Product Type", typeof(string));
+            table.Columns.Add("Customer ID", typeof(int));
+            table.Columns.Add("designer", typeof(string));
+            table.Columns.Add("status", typeof(string));
+
+
+
+            string query = "SELECT Orders.order_id,product_type,cust_id,designer,status FROM ORDERS,ASSIGNED_ORDERS WHERE ASSIGNED_ORDERS.order_id = ORDERS.order_id";
+            SqlConnection conn = connectDB();
+            if (conn != null)
+            {
+                SqlCommand cmd = new SqlCommand(query, conn);
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    table.Rows.Add(reader.GetInt32(0), reader.GetString(1), reader.GetInt32(2), reader.GetString(3), reader.GetString(4));
+                   
+                }
+
+            }
+            //retervie data from database
+            return table;
+        }
+
+
+
+
+
 
         internal static string getDescription(string order_id)
         {
