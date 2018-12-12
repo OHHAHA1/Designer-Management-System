@@ -79,13 +79,12 @@ namespace WindowsFormsApp1
         {
             dataGridJobRequest.DataSource = Database.populateJobRequest(lblUsername.Text);
             populateRevisionRequest();
+
            
 
+
             string imagePath = Path.Combine(Path.Combine(systermPath, "userpic"),username+".jpg");
-            
             picUser.Image = new Bitmap(imagePath);
-
-
         }
 
         private void populateRevisionRequest()
@@ -150,6 +149,7 @@ namespace WindowsFormsApp1
 
         }
 
+
         private void btnMessages_Click(object sender, EventArgs e)
         {
             frmChatInterface chat = new frmChatInterface(lblUsername.Text);
@@ -169,5 +169,6 @@ namespace WindowsFormsApp1
 
             }
         }
+
     }
 }

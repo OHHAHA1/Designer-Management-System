@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+
+
             this.btnSubmitDesign = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -45,19 +47,23 @@
             this.dataGridJobRequest = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
             this.dataGridRevision = new System.Windows.Forms.DataGridView();
+
             this.btnMessages = new System.Windows.Forms.Button();
             this.picUser = new System.Windows.Forms.PictureBox();
+
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridJobRequest)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridRevision)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picUser)).BeginInit();
             this.SuspendLayout();
             // 
+
             // btnSubmitDesign
             // 
             this.btnSubmitDesign.Location = new System.Drawing.Point(449, 120);
             this.btnSubmitDesign.Name = "btnSubmitDesign";
             this.btnSubmitDesign.Size = new System.Drawing.Size(107, 24);
+
             this.btnSubmitDesign.TabIndex = 4;
             this.btnSubmitDesign.Text = "Submit Designs";
             this.btnSubmitDesign.UseVisualStyleBackColor = true;
@@ -66,7 +72,9 @@
             // label1
             // 
             this.label1.AutoSize = true;
+
             this.label1.Location = new System.Drawing.Point(546, 11);
+
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(61, 13);
@@ -78,7 +86,9 @@
             // label4
             // 
             this.label4.AutoSize = true;
+
             this.label4.Location = new System.Drawing.Point(356, 87);
+
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(76, 13);
@@ -88,7 +98,9 @@
             // label8
             // 
             this.label8.AutoSize = true;
+
             this.label8.Location = new System.Drawing.Point(356, 56);
+
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(70, 13);
@@ -97,8 +109,10 @@
             // 
             // txtDesignType
             // 
+
             this.txtDesignType.Location = new System.Drawing.Point(459, 53);
             this.txtDesignType.Margin = new System.Windows.Forms.Padding(2);
+
             this.txtDesignType.Name = "txtDesignType";
             this.txtDesignType.ReadOnly = true;
             this.txtDesignType.Size = new System.Drawing.Size(178, 20);
@@ -106,8 +120,10 @@
             // 
             // txtOrderNum
             // 
+
             this.txtOrderNum.Location = new System.Drawing.Point(459, 84);
             this.txtOrderNum.Margin = new System.Windows.Forms.Padding(2);
+
             this.txtOrderNum.Name = "txtOrderNum";
             this.txtOrderNum.ReadOnly = true;
             this.txtOrderNum.Size = new System.Drawing.Size(178, 20);
@@ -116,7 +132,9 @@
             // lblName
             // 
             this.lblName.AutoSize = true;
+
             this.lblName.Location = new System.Drawing.Point(169, 21);
+
             this.lblName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(111, 13);
@@ -126,8 +144,10 @@
             // 
             // btnLogout
             // 
+=
             this.btnLogout.Location = new System.Drawing.Point(172, 109);
             this.btnLogout.Margin = new System.Windows.Forms.Padding(2);
+
             this.btnLogout.Name = "btnLogout";
             this.btnLogout.Size = new System.Drawing.Size(95, 23);
             this.btnLogout.TabIndex = 17;
@@ -138,7 +158,9 @@
             // lblUsername
             // 
             this.lblUsername.AutoSize = true;
+
             this.lblUsername.Location = new System.Drawing.Point(225, 41);
+
             this.lblUsername.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(53, 13);
@@ -148,9 +170,11 @@
             // 
             // btnDetails
             // 
+
             this.btnDetails.Location = new System.Drawing.Point(565, 121);
             this.btnDetails.Name = "btnDetails";
             this.btnDetails.Size = new System.Drawing.Size(72, 23);
+
             this.btnDetails.TabIndex = 19;
             this.btnDetails.Text = "Details";
             this.btnDetails.UseVisualStyleBackColor = true;
@@ -158,9 +182,11 @@
             // 
             // btnAcceptJob
             // 
+
             this.btnAcceptJob.Location = new System.Drawing.Point(10, 424);
             this.btnAcceptJob.Name = "btnAcceptJob";
             this.btnAcceptJob.Size = new System.Drawing.Size(294, 24);
+
             this.btnAcceptJob.TabIndex = 6;
             this.btnAcceptJob.Text = "Accept";
             this.btnAcceptJob.UseVisualStyleBackColor = true;
@@ -168,9 +194,11 @@
             // 
             // btnAcceptRevision
             // 
+
             this.btnAcceptRevision.Location = new System.Drawing.Point(347, 424);
             this.btnAcceptRevision.Name = "btnAcceptRevision";
             this.btnAcceptRevision.Size = new System.Drawing.Size(290, 24);
+
             this.btnAcceptRevision.TabIndex = 7;
             this.btnAcceptRevision.Text = "Accept Revision";
             this.btnAcceptRevision.UseVisualStyleBackColor = true;
@@ -185,8 +213,10 @@
             this.groupBox1.Controls.Add(this.btnLogout);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
+
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(284, 172);
+
             this.groupBox1.TabIndex = 20;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "User Details";
@@ -194,30 +224,38 @@
             // 
             // btnEditAccount
             // 
+
             this.btnEditAccount.Location = new System.Drawing.Point(172, 136);
             this.btnEditAccount.Margin = new System.Windows.Forms.Padding(2);
+
             this.btnEditAccount.Name = "btnEditAccount";
             this.btnEditAccount.Size = new System.Drawing.Size(95, 23);
             this.btnEditAccount.TabIndex = 19;
             this.btnEditAccount.Text = "Edit Account";
             this.btnEditAccount.UseVisualStyleBackColor = true;
             // 
+
+
             // dataGridJobRequest
             // 
             this.dataGridJobRequest.AllowUserToAddRows = false;
             this.dataGridJobRequest.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridJobRequest.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+
             this.dataGridJobRequest.Location = new System.Drawing.Point(10, 263);
             this.dataGridJobRequest.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridJobRequest.Name = "dataGridJobRequest";
             this.dataGridJobRequest.Size = new System.Drawing.Size(294, 156);
+
             this.dataGridJobRequest.TabIndex = 21;
             this.dataGridJobRequest.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridJobRequest_CellClick);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
+
             this.label5.Location = new System.Drawing.Point(289, 231);
+
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(72, 13);
             this.label5.TabIndex = 22;
@@ -228,10 +266,12 @@
             this.dataGridRevision.AllowUserToAddRows = false;
             this.dataGridRevision.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridRevision.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+
             this.dataGridRevision.Location = new System.Drawing.Point(347, 263);
             this.dataGridRevision.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridRevision.Name = "dataGridRevision";
             this.dataGridRevision.Size = new System.Drawing.Size(290, 156);
+
             this.dataGridRevision.TabIndex = 23;
             this.dataGridRevision.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
@@ -259,7 +299,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+
             this.ClientSize = new System.Drawing.Size(656, 458);
+
             this.Controls.Add(this.btnMessages);
             this.Controls.Add(this.dataGridRevision);
             this.Controls.Add(this.label5);
@@ -305,6 +347,8 @@
         private System.Windows.Forms.Button btnAcceptRevision;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnEditAccount;
+
+
         private System.Windows.Forms.DataGridView dataGridJobRequest;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DataGridView dataGridRevision;

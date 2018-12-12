@@ -13,6 +13,7 @@ namespace WindowsFormsApp1
 {
     public partial class frmManager : Form
     {
+
         int selectedRow;
         public frmManager(string username)
         {
@@ -39,13 +40,19 @@ namespace WindowsFormsApp1
 
         private void button2_Click(object sender, EventArgs e)
         {
+
             AddCust addcust = new AddCust();
             addcust.Show();
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            using(frmNewItem frm = new frmNewItem(null))
+            {
+                if (frm.ShowDialog() == DialogResult.OK)
+                    orderBindingSource.DataSource = db.Orders.ToList();
+            }
         }
 
         private void vScrollBar1_Scroll(object sender, ScrollEventArgs e)
@@ -55,6 +62,7 @@ namespace WindowsFormsApp1
 
         private void frmManager_Load(object sender, EventArgs e)
         {
+
             dataGridOrder.DataSource = Database.populateOrders();
             dataGridViewCustomer.DataSource = Database.populateCustomers();
         }
@@ -112,6 +120,7 @@ namespace WindowsFormsApp1
         private void btnAssign_Click(object sender, EventArgs e)
         {
             frmAssign ass = new frmAssign();
+
         }
     }
 }

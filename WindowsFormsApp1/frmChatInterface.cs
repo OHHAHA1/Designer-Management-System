@@ -14,24 +14,28 @@ namespace WindowsFormsApp1
 {
     public partial class frmChatInterface : Form
     {
-        SqlConnection conn = new SqlConnection("Data Source=KUMA;Initial Catalog=chat;Integrated Security=True");
+        SqlConnection conn; //new SqlConnection("Data Source=KUMA;Initial Catalog=chat;Integrated Security=True");
         SqlDataReader reader = null;
-        String chat_id;
+     String chat_id;
         SqlCommand command;
-        String user = "Shehan";
+        String user =null;
+
 
         public frmChatInterface( String username)
         {
             InitializeComponent();
             user = username;
+
         }
 
         private void frmChatInterface_Load(object sender, EventArgs e)
         {
+
             conn = Database.connectDB();
             // Need to change the query
             // Get all the users except PRIMARY USER (Logged user)
             command = new SqlCommand("SELECT DISTINCT f_name FROM USERS WHERE username != '" + user +"'", conn);
+
 
             reader = command.ExecuteReader();
 
@@ -108,7 +112,8 @@ namespace WindowsFormsApp1
                     txtMsg.Clear();
                 } catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+
+                    MessageBox.Show(ex.StackTrace);
                 } finally
                 {
                     conn.Close();
@@ -155,6 +160,11 @@ namespace WindowsFormsApp1
             }
 
             conn.Close();
+
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
 
         }
     }

@@ -28,6 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -46,6 +50,7 @@
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.lblLogName = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+
             this.lblUsername = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -61,12 +66,15 @@
             this.button7 = new System.Windows.Forms.Button();
             this.btnAssign = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+
             this.menuStrip1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
+
             ((System.ComponentModel.ISupportInitialize)(this.dataGridOrder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCustomer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -78,7 +86,9 @@
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
+
             this.menuStrip1.Size = new System.Drawing.Size(893, 24);
+
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -226,8 +236,68 @@
             this.lblUsername.Text = "ID:010101";
             this.lblUsername.Click += new System.EventHandler(this.label1_Click_1);
             // 
-            // button1
+            // btnNew
             // 
+            this.btnNew.Location = new System.Drawing.Point(811, 30);
+            this.btnNew.Name = "btnNew";
+            this.btnNew.Size = new System.Drawing.Size(118, 40);
+            this.btnNew.TabIndex = 2;
+            this.btnNew.Text = "New Order";
+            this.btnNew.UseVisualStyleBackColor = true;
+            this.btnNew.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnNewCustomer
+            // 
+            this.btnNewCustomer.Location = new System.Drawing.Point(811, 385);
+            this.btnNewCustomer.Name = "btnNewCustomer";
+            this.btnNewCustomer.Size = new System.Drawing.Size(118, 40);
+            this.btnNewCustomer.TabIndex = 3;
+            this.btnNewCustomer.Text = "New Customer";
+            this.btnNewCustomer.UseVisualStyleBackColor = true;
+            this.btnNewCustomer.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // dataGridView
+            // 
+            this.dataGridView.AllowUserToAddRows = false;
+            this.dataGridView.AllowUserToDeleteRows = false;
+            this.dataGridView.AutoGenerateColumns = false;
+            this.dataGridView.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.MintCream;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.orderNoDataGridViewTextBoxColumn,
+            this.customerNameDataGridViewTextBoxColumn,
+            this.productDataGridViewTextBoxColumn,
+            this.statusDataGridViewTextBoxColumn,
+            this.designerDataGridViewTextBoxColumn});
+            this.dataGridView.DataSource = this.orderBindingSource;
+            this.dataGridView.GridColor = System.Drawing.Color.Silver;
+            this.dataGridView.Location = new System.Drawing.Point(210, 30);
+            this.dataGridView.Name = "dataGridView";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            this.dataGridView.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridView.Size = new System.Drawing.Size(586, 311);
+            this.dataGridView.TabIndex = 4;
+            // 
+
             this.button1.Location = new System.Drawing.Point(29, 310);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(118, 40);
@@ -235,9 +305,25 @@
             this.button1.Text = "New Order";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+
             // 
-            // button2
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.AutoGenerateColumns = false;
+            this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.customerIDDataGridViewTextBoxColumn,
+            this.customerNameDataGridViewTextBoxColumn1,
+            this.productDataGridViewTextBoxColumn1});
+            this.dataGridView2.DataSource = this.customerDetBindingSource;
+            this.dataGridView2.Location = new System.Drawing.Point(210, 385);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(586, 264);
+            this.dataGridView2.TabIndex = 5;
+            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
+
             this.button2.Location = new System.Drawing.Point(328, 493);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(118, 40);
@@ -375,6 +461,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+
             this.ClientSize = new System.Drawing.Size(893, 567);
             this.Controls.Add(this.btnAssign);
             this.Controls.Add(this.button7);
@@ -389,6 +476,7 @@
             this.Controls.Add(this.dataGridOrder);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
+
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -402,9 +490,11 @@
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel2.ResumeLayout(false);
             this.flowLayoutPanel2.PerformLayout();
+
             ((System.ComponentModel.ISupportInitialize)(this.dataGridOrder)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCustomer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -432,6 +522,7 @@
         private System.Windows.Forms.Label lblLogName;
         private System.Windows.Forms.Label lblUsername;
         private System.Windows.Forms.Label label2;
+
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridView dataGridOrder;
@@ -445,5 +536,6 @@
         public System.Windows.Forms.DataGridView dataGridViewCustomer;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button btnAssign;
+
     }
 }
