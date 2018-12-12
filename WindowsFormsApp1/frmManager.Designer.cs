@@ -47,50 +47,34 @@
             this.desinerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.lblLogName = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+
+            this.lblUsername = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.dataGridOrder = new System.Windows.Forms.DataGridView();
+            this.dataGridViewCustomer = new System.Windows.Forms.DataGridView();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.refresh = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.btnMessages = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnNew = new System.Windows.Forms.Button();
-            this.btnNewCustomer = new System.Windows.Forms.Button();
-            this.dataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.btnEditCustomer = new System.Windows.Forms.Button();
-            this.btnDeleteCustomer = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnMessage = new System.Windows.Forms.Button();
-            this.btnInvoice = new System.Windows.Forms.Button();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.customerIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.customerNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.customerDetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.orderNoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.customerNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.designerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.orderBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.customerBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
-            this.customerBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
-            this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.customerBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.customerBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.label3 = new System.Windows.Forms.Label();
+            this.button7 = new System.Windows.Forms.Button();
+            this.btnAssign = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+
             this.menuStrip1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.flowLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerDetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource2)).BeginInit();
+
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridOrder)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCustomer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -102,7 +86,9 @@
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(968, 24);
+
+            this.menuStrip1.Size = new System.Drawing.Size(893, 24);
+
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -208,21 +194,11 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(190, 260);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::WindowsFormsApp1.Properties.Resources._35400607_1287156498083897_4298805785581846528_o;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(187, 170);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // flowLayoutPanel2
             // 
             this.flowLayoutPanel2.Controls.Add(this.lblLogName);
             this.flowLayoutPanel2.Controls.Add(this.label2);
-            this.flowLayoutPanel2.Controls.Add(this.label1);
+            this.flowLayoutPanel2.Controls.Add(this.lblUsername);
             this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 179);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
@@ -249,16 +225,16 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Manager";
             // 
-            // label1
+            // lblUsername
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 36);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 16);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "ID:010101";
-            this.label1.Click += new System.EventHandler(this.label1_Click_1);
+            this.lblUsername.AutoSize = true;
+            this.lblUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsername.Location = new System.Drawing.Point(3, 36);
+            this.lblUsername.Name = "lblUsername";
+            this.lblUsername.Size = new System.Drawing.Size(66, 16);
+            this.lblUsername.TabIndex = 3;
+            this.lblUsername.Text = "ID:010101";
+            this.lblUsername.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // btnNew
             // 
@@ -321,7 +297,15 @@
             this.dataGridView.Size = new System.Drawing.Size(586, 311);
             this.dataGridView.TabIndex = 4;
             // 
-            // dataGridView2
+
+            this.button1.Location = new System.Drawing.Point(29, 310);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(118, 40);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "New Order";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+
             // 
             this.dataGridView2.AllowUserToAddRows = false;
             this.dataGridView2.AllowUserToDeleteRows = false;
@@ -339,143 +323,138 @@
             this.dataGridView2.TabIndex = 5;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
-            // btnEdit
-            // 
-            this.btnEdit.Location = new System.Drawing.Point(811, 76);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(118, 40);
-            this.btnEdit.TabIndex = 6;
-            this.btnEdit.Text = "Edit Order";
-            this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
-            // 
-            // btnEditCustomer
-            // 
-            this.btnEditCustomer.Location = new System.Drawing.Point(811, 431);
-            this.btnEditCustomer.Name = "btnEditCustomer";
-            this.btnEditCustomer.Size = new System.Drawing.Size(118, 40);
-            this.btnEditCustomer.TabIndex = 7;
-            this.btnEditCustomer.Text = "Edit Customer";
-            this.btnEditCustomer.UseVisualStyleBackColor = true;
-            this.btnEditCustomer.Click += new System.EventHandler(this.btnEditCustomer_Click);
-            // 
-            // btnDeleteCustomer
-            // 
-            this.btnDeleteCustomer.Location = new System.Drawing.Point(811, 477);
-            this.btnDeleteCustomer.Name = "btnDeleteCustomer";
-            this.btnDeleteCustomer.Size = new System.Drawing.Size(118, 40);
-            this.btnDeleteCustomer.TabIndex = 8;
-            this.btnDeleteCustomer.Text = "Delete Customer";
-            this.btnDeleteCustomer.UseVisualStyleBackColor = true;
-            this.btnDeleteCustomer.Click += new System.EventHandler(this.btnDeleteCustomer_Click);
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Location = new System.Drawing.Point(811, 301);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(118, 40);
-            this.btnDelete.TabIndex = 9;
-            this.btnDelete.Text = "Remove Order";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // btnMessage
-            // 
-            this.btnMessage.BackColor = System.Drawing.Color.Gray;
-            this.btnMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMessage.ForeColor = System.Drawing.Color.Black;
-            this.btnMessage.Location = new System.Drawing.Point(29, 355);
-            this.btnMessage.Name = "btnMessage";
-            this.btnMessage.Size = new System.Drawing.Size(113, 33);
-            this.btnMessage.TabIndex = 10;
-            this.btnMessage.Text = "Message";
-            this.btnMessage.UseVisualStyleBackColor = false;
-            // 
-            // btnInvoice
-            // 
-            this.btnInvoice.Location = new System.Drawing.Point(811, 609);
-            this.btnInvoice.Name = "btnInvoice";
-            this.btnInvoice.Size = new System.Drawing.Size(118, 40);
-            this.btnInvoice.TabIndex = 11;
-            this.btnInvoice.Text = "Get Invoice";
-            this.btnInvoice.UseVisualStyleBackColor = true;
-            // 
-            // customerIDDataGridViewTextBoxColumn
-            // 
-            this.customerIDDataGridViewTextBoxColumn.DataPropertyName = "CustomerID";
-            this.customerIDDataGridViewTextBoxColumn.HeaderText = "CustomerID";
-            this.customerIDDataGridViewTextBoxColumn.Name = "customerIDDataGridViewTextBoxColumn";
-            // 
-            // customerNameDataGridViewTextBoxColumn1
-            // 
-            this.customerNameDataGridViewTextBoxColumn1.DataPropertyName = "CustomerName";
-            this.customerNameDataGridViewTextBoxColumn1.HeaderText = "CustomerName";
-            this.customerNameDataGridViewTextBoxColumn1.Name = "customerNameDataGridViewTextBoxColumn1";
-            // 
-            // productDataGridViewTextBoxColumn1
-            // 
-            this.productDataGridViewTextBoxColumn1.DataPropertyName = "Product";
-            this.productDataGridViewTextBoxColumn1.HeaderText = "Product";
-            this.productDataGridViewTextBoxColumn1.Name = "productDataGridViewTextBoxColumn1";
-            // 
-            // customerDetBindingSource
-            // 
-            this.customerDetBindingSource.DataSource = typeof(WindowsFormsApp1.Customer_Det);
-            // 
-            // orderNoDataGridViewTextBoxColumn
-            // 
-            this.orderNoDataGridViewTextBoxColumn.DataPropertyName = "OrderNo";
-            this.orderNoDataGridViewTextBoxColumn.HeaderText = "OrderNo";
-            this.orderNoDataGridViewTextBoxColumn.Name = "orderNoDataGridViewTextBoxColumn";
-            // 
-            // customerNameDataGridViewTextBoxColumn
-            // 
-            this.customerNameDataGridViewTextBoxColumn.DataPropertyName = "CustomerName";
-            this.customerNameDataGridViewTextBoxColumn.HeaderText = "CustomerName";
-            this.customerNameDataGridViewTextBoxColumn.Name = "customerNameDataGridViewTextBoxColumn";
-            // 
-            // productDataGridViewTextBoxColumn
-            // 
-            this.productDataGridViewTextBoxColumn.DataPropertyName = "Product";
-            this.productDataGridViewTextBoxColumn.HeaderText = "Product";
-            this.productDataGridViewTextBoxColumn.Name = "productDataGridViewTextBoxColumn";
-            // 
-            // statusDataGridViewTextBoxColumn
-            // 
-            this.statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
-            this.statusDataGridViewTextBoxColumn.HeaderText = "Status";
-            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
-            // 
-            // designerDataGridViewTextBoxColumn
-            // 
-            this.designerDataGridViewTextBoxColumn.DataPropertyName = "Designer";
-            this.designerDataGridViewTextBoxColumn.HeaderText = "Designer";
-            this.designerDataGridViewTextBoxColumn.Name = "designerDataGridViewTextBoxColumn";
-            // 
-            // orderBindingSource
-            // 
-            this.orderBindingSource.DataSource = typeof(WindowsFormsApp1.Order);
-            // 
-            // customerBindingSource4
-            // 
-            this.customerBindingSource4.DataSource = typeof(WindowsFormsApp1.Customer);
-            // 
-            // customerBindingSource3
-            // 
-            this.customerBindingSource3.DataSource = typeof(WindowsFormsApp1.Customer);
-            // 
-            // customerBindingSource
-            // 
-            this.customerBindingSource.DataSource = typeof(WindowsFormsApp1.Customer);
-            // 
-            // customerBindingSource1
-            // 
-            this.customerBindingSource1.DataSource = typeof(WindowsFormsApp1.Customer);
-            // 
-            // customerBindingSource2
-            // 
 
-            this.customerBindingSource2.DataSource = typeof(WindowsFormsApp1.Customer);
+            this.button2.Location = new System.Drawing.Point(328, 493);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(118, 40);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "New Customer";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // dataGridOrder
+            // 
+            this.dataGridOrder.AllowUserToAddRows = false;
+            this.dataGridOrder.AllowUserToDeleteRows = false;
+            this.dataGridOrder.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridOrder.Location = new System.Drawing.Point(210, 68);
+            this.dataGridOrder.Name = "dataGridOrder";
+            this.dataGridOrder.ReadOnly = true;
+            this.dataGridOrder.Size = new System.Drawing.Size(662, 158);
+            this.dataGridOrder.TabIndex = 4;
+            // 
+            // dataGridViewCustomer
+            // 
+            this.dataGridViewCustomer.AllowUserToAddRows = false;
+            this.dataGridViewCustomer.AllowUserToDeleteRows = false;
+            this.dataGridViewCustomer.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridViewCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewCustomer.Location = new System.Drawing.Point(210, 275);
+            this.dataGridViewCustomer.Name = "dataGridViewCustomer";
+            this.dataGridViewCustomer.ReadOnly = true;
+            this.dataGridViewCustomer.Size = new System.Drawing.Size(662, 191);
+            this.dataGridViewCustomer.TabIndex = 5;
+            this.dataGridViewCustomer.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCustomer_CellClick);
+            this.dataGridViewCustomer.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCustomer_CellContentClick);
+            this.dataGridViewCustomer.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCustomer_CellContentDoubleClick);
+            this.dataGridViewCustomer.Click += new System.EventHandler(this.dataGridViewCustomer_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(29, 356);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(118, 40);
+            this.button3.TabIndex = 6;
+            this.button3.Text = "Open Order";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(192, 493);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(118, 40);
+            this.button4.TabIndex = 7;
+            this.button4.Text = "View Customer";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // refresh
+            // 
+            this.refresh.Location = new System.Drawing.Point(461, 493);
+            this.refresh.Name = "refresh";
+            this.refresh.Size = new System.Drawing.Size(118, 40);
+            this.refresh.TabIndex = 8;
+            this.refresh.Text = "Refresh";
+            this.refresh.UseVisualStyleBackColor = true;
+            this.refresh.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(29, 402);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(118, 40);
+            this.button6.TabIndex = 9;
+            this.button6.Text = "Remove Order";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // btnMessages
+            // 
+            this.btnMessages.Location = new System.Drawing.Point(609, 493);
+            this.btnMessages.Name = "btnMessages";
+            this.btnMessages.Size = new System.Drawing.Size(118, 40);
+            this.btnMessages.TabIndex = 16;
+            this.btnMessages.Text = "Messages";
+            this.btnMessages.UseVisualStyleBackColor = true;
+            this.btnMessages.Click += new System.EventHandler(this.btnMessages_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(510, 42);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(38, 13);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Orders";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(510, 250);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(56, 13);
+            this.label3.TabIndex = 18;
+            this.label3.Text = "Customers";
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(754, 493);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(118, 40);
+            this.button7.TabIndex = 19;
+            this.button7.Text = "Invoice";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // btnAssign
+            // 
+            this.btnAssign.Location = new System.Drawing.Point(29, 493);
+            this.btnAssign.Name = "btnAssign";
+            this.btnAssign.Size = new System.Drawing.Size(118, 40);
+            this.btnAssign.TabIndex = 20;
+            this.btnAssign.Text = "Assign Designer";
+            this.btnAssign.UseVisualStyleBackColor = true;
+            this.btnAssign.Click += new System.EventHandler(this.btnAssign_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::WindowsFormsApp1.Properties.Resources.Vecteezy_17_8300_06__Converted__01;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(187, 170);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // frmManager
             // 
@@ -483,42 +462,39 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
 
-            this.ClientSize = new System.Drawing.Size(968, 666);
-            this.Controls.Add(this.btnInvoice);
-            this.Controls.Add(this.btnMessage);
-            this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.btnDeleteCustomer);
-            this.Controls.Add(this.btnEditCustomer);
-            this.Controls.Add(this.btnEdit);
+            this.ClientSize = new System.Drawing.Size(893, 567);
+            this.Controls.Add(this.btnAssign);
+            this.Controls.Add(this.button7);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnMessages);
+            this.Controls.Add(this.button6);
+            this.Controls.Add(this.refresh);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.dataGridViewCustomer);
+            this.Controls.Add(this.dataGridOrder);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
 
-
-            this.Controls.Add(this.dataGridView2);
-            this.Controls.Add(this.dataGridView);
-            this.Controls.Add(this.btnNewCustomer);
-            this.Controls.Add(this.btnNew);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmManager";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Username(Manager)";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Text = "Manager";
             this.Load += new System.EventHandler(this.frmManager_Load);
+            this.MouseClick += new System.Windows.Forms.MouseEventHandler(this.frmManager_MouseClick);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.flowLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.flowLayoutPanel2.ResumeLayout(false);
             this.flowLayoutPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerDetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.orderBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource2)).EndInit();
+
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridOrder)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCustomer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -544,35 +520,22 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.Label lblLogName;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblUsername;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnNew;
-        private System.Windows.Forms.Button btnNewCustomer;
-        private System.Windows.Forms.DataGridView dataGridView;
-        private System.Windows.Forms.DataGridView dataGridView2;
 
-        private System.Windows.Forms.Button btnEdit;
-        private System.Windows.Forms.Button btnEditCustomer;
-        private System.Windows.Forms.Button btnDeleteCustomer;
-        private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.BindingSource orderBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn orderNoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn customerNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn productDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn statusDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn designerDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource customerBindingSource3;
-        private System.Windows.Forms.BindingSource customerBindingSource;
-        private System.Windows.Forms.BindingSource customerBindingSource1;
-        private System.Windows.Forms.BindingSource customerBindingSource2;
-        private System.Windows.Forms.BindingSource customerBindingSource4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn customerIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn customerNameDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn productDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.BindingSource customerDetBindingSource;
-        private System.Windows.Forms.Button btnMessage;
-        private System.Windows.Forms.Button btnInvoice;
-        private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.DataGridView dataGridOrder;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button refresh;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnMessages;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label3;
+        public System.Windows.Forms.DataGridView dataGridViewCustomer;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button btnAssign;
 
     }
 }

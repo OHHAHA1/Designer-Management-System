@@ -60,42 +60,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-
-    <Compile Include="Customer.cs">
-      <DependentUpon>CustomerModel.tt</DependentUpon>
+    <Compile Include="AddCust.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CustomerModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CustomerModel.Context.tt</DependentUpon>
+    <Compile Include="AddCust.Designer.cs">
+      <DependentUpon>AddCust.cs</DependentUpon>
     </Compile>
-    <Compile Include="CustomerModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CustomerModel.tt</DependentUpon>
+    <Compile Include="Customer Details.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CustomerModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CustomerModel.edmx</DependentUpon>
+    <Compile Include="Customer Details.Designer.cs">
+      <DependentUpon>Customer Details.cs</DependentUpon>
     </Compile>
-    <Compile Include="Customer_Det.cs">
-      <DependentUpon>Customer_DetModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Customer_DetModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Customer_DetModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Customer_DetModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Customer_DetModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Customer_DetModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Customer_DetModel.edmx</DependentUpon>
 
     <Compile Include="DesignerSubViews\Copying.cs">
       <SubType>Form</SubType>
@@ -129,11 +105,12 @@
       <DependentUpon>Desinger.cs</DependentUpon>
     </Compile>
 
-    <Compile Include="frmCustomer.cs">
+    <Compile Include="frmAssign.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmCustomer.Designer.cs">
-      <DependentUpon>frmCustomer.cs</DependentUpon>
+    <Compile Include="frmAssign.Designer.cs">
+      <DependentUpon>frmAssign.cs</DependentUpon>
+    </Compile>
 
     <Compile Include="frmChatInterface.cs">
       <SubType>Form</SubType>
@@ -141,6 +118,12 @@
     <Compile Include="frmChatInterface.Designer.cs">
       <DependentUpon>frmChatInterface.cs</DependentUpon>
 
+    </Compile>
+    <Compile Include="frmEditCust.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEditCust.Designer.cs">
+      <DependentUpon>frmEditCust.cs</DependentUpon>
     </Compile>
     <Compile Include="frmManager.cs">
       <SubType>Form</SubType>
@@ -190,6 +173,12 @@
 
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AddCust.resx">
+      <DependentUpon>AddCust.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Customer Details.resx">
+      <DependentUpon>Customer Details.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DesignerSubViews\Copying.resx">
       <DependentUpon>Copying.cs</DependentUpon>
     </EmbeddedResource>
@@ -206,12 +195,15 @@
       <DependentUpon>Desinger.cs</DependentUpon>
     </EmbeddedResource>
 
-    <EmbeddedResource Include="frmCustomer.resx">
-      <DependentUpon>frmCustomer.cs</DependentUpon>
-
+    <EmbeddedResource Include="frmAssign.resx">
+      <DependentUpon>frmAssign.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmChatInterface.resx">
       <DependentUpon>frmChatInterface.cs</DependentUpon>
 
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEditCust.resx">
+      <DependentUpon>frmEditCust.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>

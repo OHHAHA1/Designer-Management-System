@@ -20,18 +20,22 @@ namespace WindowsFormsApp1
         SqlCommand command;
         String user =null;
 
-        public frmChatInterface(String user)
+
+        public frmChatInterface( String username)
         {
             InitializeComponent();
-            this.user = user;
+            user = username;
+
         }
 
         private void frmChatInterface_Load(object sender, EventArgs e)
         {
-                conn = Database.connectDB();
+
+            conn = Database.connectDB();
             // Need to change the query
             // Get all the users except PRIMARY USER (Logged user)
-            command = new SqlCommand("SELECT DISTINCT username FROM USERS WHERE username != '" + user +"'", conn);
+            command = new SqlCommand("SELECT DISTINCT f_name FROM USERS WHERE username != '" + user +"'", conn);
+
 
             reader = command.ExecuteReader();
 

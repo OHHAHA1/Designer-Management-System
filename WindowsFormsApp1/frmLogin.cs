@@ -49,7 +49,7 @@ namespace WindowsFormsApp1
                 }
                 else if (type == "Manager") {
                     Console.Write("Designer");
-                    frmManager nextForm = new frmManager();
+                    frmManager nextForm = new frmManager(txtUsername.Text);
                     this.Hide();
                     nextForm.ShowDialog();
                 }   

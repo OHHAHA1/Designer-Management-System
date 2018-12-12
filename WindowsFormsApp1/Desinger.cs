@@ -79,6 +79,10 @@ namespace WindowsFormsApp1
         {
             dataGridJobRequest.DataSource = Database.populateJobRequest(lblUsername.Text);
             populateRevisionRequest();
+
+           
+
+
             string imagePath = Path.Combine(Path.Combine(systermPath, "userpic"),username+".jpg");
             picUser.Image = new Bitmap(imagePath);
         }
@@ -140,14 +144,30 @@ namespace WindowsFormsApp1
             if (this.WindowState == FormWindowState.Minimized)
             {
                 Hide();
-                notifyIcon1.Visible = true;
+               // notifyIcon1.Visible = true;
             }
 
         }
+
+
         private void btnMessages_Click(object sender, EventArgs e)
         {
-            frmChatInterface submit = new frmChatInterface(lblUsername.Text);
-            submit.Show();
+            frmChatInterface chat = new frmChatInterface(lblUsername.Text);
+            chat.Show();
+
+        }
+
+        private void btnAcceptRevision_Click(object sender, EventArgs e)
+        {
+            DialogResult logout = MessageBox.Show("Do you Want to Accept Revision" + "", "Revision", MessageBoxButtons.YesNo);
+            if (logout == DialogResult.Yes)
+            {
+                //set to accepted order
+                DataGridViewRow row = dataGridJobRequest.Rows[selectedRow];
+                txtOrderNum.Text = row.Cells[0].Value.ToString();
+                txtDesignType.Text = row.Cells[1].Value.ToString();
+
+            }
         }
 
     }

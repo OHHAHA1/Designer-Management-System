@@ -12,10 +12,14 @@ using WindowsFormsApp1.Model;
 namespace WindowsFormsApp1
 {
     public partial class invoice : Form
+
     {
-        public invoice()
+        string cust_id;
+        public invoice(string cust_id)
         {
             InitializeComponent();
+            this.cust_id = cust_id;
+
         }
 
         private void invoice_Load(object sender, EventArgs e)
@@ -27,7 +31,7 @@ namespace WindowsFormsApp1
 
         private void comboBoxCustID_SelectedIndexChanged(object sender, EventArgs e)
         {
-            dataGridOrders.DataSource = Database.populateOrders(lblCustID.Text);
+            dataGridOrders.DataSource = Database.populateOrders(cust_id);
         }
     }
 }

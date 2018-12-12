@@ -7,18 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WindowsFormsApp1.Model;
 
 namespace WindowsFormsApp1
 {
     public partial class frmManager : Form
     {
 
-        ProjectCEntities db;
-        ProjectC_Cus_DetEntities db1;
-
-        public frmManager()
+        int selectedRow;
+        public frmManager(string username)
         {
             InitializeComponent();
+            lblUsername.Text =  username;
+            lblLogName.Text = Database.getName(username);
             
         }
 
@@ -39,11 +40,10 @@ namespace WindowsFormsApp1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            using (frmCustomer frm = new frmCustomer(null))
-            {
-                if (frm.ShowDialog() == DialogResult.OK)
-                    customerDetBindingSource.DataSource = db1.Customer_Det.ToList();
-            }
+
+            AddCust addcust = new AddCust();
+            addcust.Show();
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -62,58 +62,65 @@ namespace WindowsFormsApp1
 
         private void frmManager_Load(object sender, EventArgs e)
         {
-            db = new ProjectCEntities();
-            orderBindingSource.DataSource = db.Orders.ToList();
 
-            db1 = new ProjectC_Cus_DetEntities();
-            customerDetBindingSource.DataSource = db1.Customer_Det.ToList();
+            dataGridOrder.DataSource = Database.populateOrders();
+            dataGridViewCustomer.DataSource = Database.populateCustomers();
         }
 
-        private void btnEdit_Click(object sender, EventArgs e)
+        private void btnMessages_Click(object sender, EventArgs e)
         {
-            if (orderBindingSource.Current == null)
-                return;
-            using(frmNewItem frm = new frmNewItem(orderBindingSource.Current as Order))
-            {
-                if (frm.ShowDialog() == DialogResult.OK)
-                    orderBindingSource.DataSource = db.Orders.ToList();
-            }
+            frmChatInterface chat = new frmChatInterface(lblUsername.Text);
+            chat.Show();
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
+        private void button4_Click(object sender, EventArgs e)
         {
-            if(orderBindingSource.Current != null)
-            {
-                if(MessageBox.Show("Are you sure want to delete this record ?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    db.Orders.Remove(orderBindingSource.Current as Order);
-                    orderBindingSource.RemoveCurrent();
-                    db.SaveChanges();
-                }
-            }
+            DataGridViewRow row = dataGridViewCustomer.Rows[selectedRow];
+            frmCustomer_Details chat = new frmCustomer_Details((int)(row.Cells[0].Value));
+            chat.Show();
         }
 
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void btnEditCustomer_Click(object sender, EventArgs e)
+        private void dataGridViewCustomer_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
            
         }
 
-        private void btnDeleteCustomer_Click(object sender, EventArgs e)
+        private void dataGridViewCustomer_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (customerDetBindingSource.Current != null)
-            {
-                if (MessageBox.Show("Are you sure want to delete this record ?", "Message", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-                    db1.Customer_Det.Remove(customerDetBindingSource.Current as Customer_Det);
-                    customerDetBindingSource.RemoveCurrent();
-                    db1.SaveChanges();
-                }
-            }
+           // selectedRow = e.RowIndex;
+        }
+
+        private void dataGridViewCustomer_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            selectedRow = e.RowIndex;
+        }
+
+        private void dataGridViewCustomer_Click(object sender, EventArgs e)
+        {
+            //dataGridViewCustomer.DataSource = Database.populateCustomers();
+        }
+
+        private void frmManager_MouseClick(object sender, MouseEventArgs e)
+        {
+         // 
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow row = dataGridViewCustomer.Rows[selectedRow];
+            invoice invoice = new invoice(row.Cells["Customer ID"].Value.ToString());
+            invoice.Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            dataGridViewCustomer.DataSource = Database.populateCustomers();
+        }
+
+        private void btnAssign_Click(object sender, EventArgs e)
+        {
+            frmAssign ass = new frmAssign();
+
         }
     }
 }
